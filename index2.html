@@ -10,6 +10,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,600;1,700&display=swap" rel="stylesheet">
     <title>Airy Console iPad</title>
     
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    
     <style>
         * {
             margin: 0;
@@ -35,6 +39,86 @@
             background-position: left top;
             background-size: auto;
             position: relative;
+            z-index: 1;
+        }
+        
+        #map-container {
+            width: 329px;
+            height: 471px;
+            left: 248px;
+            top: 349px;
+            position: absolute;
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        #map-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transform: rotate(90deg);
+            transform-origin: center center;
+        }
+
+        #mapcover-container {
+            width: 368px;
+            height: 498px;
+            left: 233px;
+            top: 330px;
+            position: absolute;
+            z-index: 3;
+            overflow: hidden;
+        }
+
+        #stick-container {
+            width: 10px;
+            height: 255px;
+            position: absolute;
+            z-index: 3;
+            left: 275px;
+            top: 452px;
+        }
+
+        #stick-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        #mapcover-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .display-text {
+            position: absolute;
+            transform: rotate(90deg);
+            transform-origin: top left;
+            text-align: center;
+            justify-content: center;
+            display: flex;
+            flex-direction: column;
+            color: #E6E6E6;
+            font-family: 'Bai Jamjuree', sans-serif;
+            z-index: 4;
+        }
+
+        #vector-container {
+            width: 79.63px;
+            height: 32.62px;
+            left: 566.62px;
+            top: 545px;
+            position: absolute;
+            transform: rotate(90deg);
+            transform-origin: top left;
+            z-index: 5;
+        }
+
+        #vector-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
         
         /* iPad 11-inch specific optimizations */
@@ -46,25 +130,243 @@
 </head>
 <body>
     <div id="background-container">
-        <div style="left: 301px; top: 584px; position: absolute; transform: rotate(90deg); transform-origin: top left; text-align: center; justify-content: center; display: flex; flex-direction: column; color: #E6E6E6; font-size: 39.45px; font-family: 'Bai Jamjuree', sans-serif; font-style: italic; font-weight: 700; word-wrap: break-word">S</div>
-        <div style="left: 570px; top: 465px; position: absolute; transform: rotate(90deg); transform-origin: top left; text-align: center; justify-content: center; display: flex; flex-direction: column; color: #E6E6E6; font-size: 13.15px; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; word-wrap: break-word">9:41 AM</div>
-        <div style="left: 573px; top: 701px; position: absolute; transform: rotate(90deg); transform-origin: top left; text-align: center; justify-content: center; display: flex; flex-direction: column; color: #E6E6E6; font-size: 13.15px; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; word-wrap: break-word">16℃</div>
-        <div style="left: 456px; top: 256px; position: absolute; transform: rotate(90deg); transform-origin: top left; text-align: center; justify-content: center; display: flex; flex-direction: column; color: #E6E6E6; font-size: 39.45px; font-family: 'Bai Jamjuree', sans-serif; font-style: italic; font-weight: 700; word-wrap: break-word">26</div>
-        <div style="left: 455px; top: 884px; position: absolute; transform: rotate(90deg); transform-origin: top left; text-align: center; justify-content: center; display: flex; flex-direction: column; color: #E6E6E6; font-size: 39.45px; font-family: 'Bai Jamjuree', sans-serif; font-style: italic; font-weight: 700; word-wrap: break-word">26</div>
+        <div id="map-container">
+            <img id="map-image" alt="Map">
+        </div>
+        <div id="mapcover-container">
+            <img id="mapcover-image" src="./Images/mapcover.png" alt="Map Cover">
+        </div>
+        <div id="stick-container">
+            <img id="stick-image" src="./Images/stick.png" alt="Stick">
+        </div>
+        <div id="vector-container">
+            <img id="vector-image" src="./Images/Vector.png" alt="Vector">
+        </div>
+        <div id="heading-display" class="display-text" style="left: 306px; top: 566px; font-size: 39.45px; font-style: italic; font-weight: 700;">S</div>
+        <div id="time-display" class="display-text" style="left: 567px; top: 452px; font-size: 13.15px; font-weight: 600;">9:41 AM</div>
+        <div id="temp-display" class="display-text" style="left: 567px; top: 685px; font-size: 13.15px; font-weight: 600;">16℃</div>
+        <div id="altitude-display" class="display-text" style="left: 456px; top: 256px; font-size: 39.45px; font-style: italic; font-weight: 700;">26</div>
+        <div id="speed-display" class="display-text" style="left: 455px; top: 851px; font-size: 39.45px; font-style: italic; font-weight: 700;">26</div>
     </div>
     
     <script>
-        // Prevent scrolling
-        document.addEventListener('touchmove', (e) => {
-            e.preventDefault();
-        }, { passive: false });
+        // Firebase configuration
+        const firebaseConfig = {
+            apiKey: "AIzaSyB56hW3EY5Z9h-pCROpus4JfIHWfO-RFWo",
+            authDomain: "airy-7c2b7.firebaseapp.com",
+            databaseURL: "https://airy-7c2b7-default-rtdb.firebaseio.com",
+            projectId: "airy-7c2b7",
+            storageBucket: "airy-7c2b7.firebasestorage.app",
+            messagingSenderId: "36806953957",
+            appId: "1:36806953957:web:9fbebec33db109b70f7d0c",
+            measurementId: "G-NM4T0FGJXF"
+        };
+
+        // Google Maps configuration
+        const GOOGLE_MAPS_API_KEY = 'AIzaSyDhdgs49esgpte10pIKDRRTjdioQ4GYGvg';
+        const MAP_ZOOM = 15;
+        const MAP_WIDTH = 640;
+        const MAP_HEIGHT = 640;
+        const UPDATE_INTERVAL = 2000; // 2 seconds
+        const ACTIVE_ROUTE_COLOR = '4790CE';
+        const TRAVELED_ROUTE_COLOR = '808080';
+        const ROUTE_LINE_WEIGHT = 15;
+        const TRAVELED_LINE_WEIGHT = 12;
+
+        // Dark style parameters matching Unity implementation
+        const styleParams = [
+            'element:geometry|color:0x050A0E',
+            'element:labels.icon|visibility:off',
+            'element:labels.text.fill|color:0x555555',
+            'element:labels.text.stroke|color:0x050A0E',
+            'feature:administrative|element:geometry|color:0x050A0E',
+            'feature:administrative.country|element:labels.text.fill|color:0x555555',
+            'feature:administrative.land_parcel|visibility:off',
+            'feature:administrative.locality|element:labels.text.fill|color:0x555555',
+            'feature:poi|element:geometry|color:0x050A0E',
+            'feature:poi|element:labels.text.fill|color:0x555555',
+            'feature:poi.park|element:geometry|color:0x050A0E',
+            'feature:poi.park|element:labels.text.fill|color:0x555555',
+            'feature:poi.park|element:labels.text.stroke|color:0x050A0E',
+            'feature:road|element:geometry.fill|color:0x101820',
+            'feature:road|element:labels.text.fill|color:0x555555',
+            'feature:road.arterial|element:geometry|color:0x101820',
+            'feature:road.highway|element:geometry|color:0x101820',
+            'feature:road.highway.controlled_access|element:geometry|color:0x101820',
+            'feature:road.local|element:labels.text.fill|color:0x555555',
+            'feature:transit|element:geometry|color:0x050A0E',
+            'feature:transit|element:labels.text.fill|color:0x555555',
+            'feature:water|element:geometry|color:0x030507',
+            'feature:water|element:labels.text.fill|color:0x555555'
+        ];
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
         
-        // Force full screen on iOS when added to home screen
-        window.addEventListener('load', () => {
-            // Force scroll to top for full screen view
-            setTimeout(() => {
-                window.scrollTo(0, 0);
-            }, 100);
+        // Reference to map image
+        const mapImage = document.getElementById('map-image');
+        
+        // Track current position and route
+        let currentPosition = null;
+        let currentHeading = 0;
+        let activeRoute = null;
+        let currentRouteIndex = 0;
+
+        // Listen for plane position updates
+        database.ref('planePosition').on('value', (snapshot) => {
+            if (snapshot && snapshot.exists()) {
+                const data = snapshot.val();
+                currentPosition = {
+                    lat: data.lat,
+                    lng: data.lng
+                };
+                currentHeading = data.heading || 0;
+                updateMap();
+            }
+        });
+
+        // Listen for route updates
+        database.ref('routeData').on('value', (snapshot) => {
+            if (snapshot && snapshot.exists()) {
+                const data = snapshot.val();
+                if (data.waypoints) {
+                    activeRoute = data.waypoints;
+                    currentRouteIndex = 0;
+                    updateMap();
+                }
+            } else {
+                activeRoute = null;
+                updateMap();
+            }
+        });
+
+        function updateMap() {
+            if (!currentPosition) return;
+
+            let url = `https://maps.googleapis.com/maps/api/staticmap?` +
+                `center=${currentPosition.lat},${currentPosition.lng}` +
+                `&zoom=${MAP_ZOOM}` +
+                `&size=${MAP_WIDTH}x${MAP_HEIGHT}` +
+                `&maptype=roadmap`;
+
+            // Add style parameters
+            styleParams.forEach(style => {
+                url += `&style=${encodeURIComponent(style)}`;
+            });
+
+            // Add active route if exists
+            if (activeRoute) {
+                // Active (upcoming) route in blue
+                url += `&path=color:0x${ACTIVE_ROUTE_COLOR}|weight:${ROUTE_LINE_WEIGHT}`;
+                for (let i = currentRouteIndex; i < activeRoute.length; i++) {
+                    url += `|${activeRoute[i].lat},${activeRoute[i].lng}`;
+                }
+
+                // Traveled route in grey
+                if (currentRouteIndex > 0) {
+                    url += `&path=color:0x${TRAVELED_ROUTE_COLOR}|weight:${TRAVELED_LINE_WEIGHT}`;
+                    for (let i = 0; i <= currentRouteIndex; i++) {
+                        url += `|${activeRoute[i].lat},${activeRoute[i].lng}`;
+                    }
+                }
+
+                // Add destination marker
+                const destination = activeRoute[activeRoute.length - 1];
+                url += `&markers=color:red|${destination.lat},${destination.lng}`;
+            }
+
+            // Add current position marker
+            url += `&markers=color:blue|${currentPosition.lat},${currentPosition.lng}`;
+
+            // Add heading
+            url += `&heading=${currentHeading}`;
+
+            // Add API key
+            url += `&key=${GOOGLE_MAPS_API_KEY}`;
+
+            // Update the map image
+            mapImage.src = url;
+        }
+
+        // Update current route index based on position
+        function updateRouteProgress() {
+            if (!activeRoute || !currentPosition) return;
+
+            // Find closest point on route
+            let minDist = Infinity;
+            let closestIndex = 0;
+
+            for (let i = currentRouteIndex; i < activeRoute.length; i++) {
+                const point = activeRoute[i];
+                const d = distance(
+                    currentPosition.lat,
+                    currentPosition.lng,
+                    point.lat,
+                    point.lng
+                );
+                if (d < minDist) {
+                    minDist = d;
+                    closestIndex = i;
+                }
+            }
+
+            if (closestIndex !== currentRouteIndex) {
+                currentRouteIndex = closestIndex;
+                updateMap();
+            }
+        }
+
+        // Calculate distance between two points
+        function distance(lat1, lon1, lat2, lon2) {
+            const R = 6371e3; // Earth's radius in meters
+            const φ1 = lat1 * Math.PI / 180;
+            const φ2 = lat2 * Math.PI / 180;
+            const Δφ = (lat2 - lat1) * Math.PI / 180;
+            const Δλ = (lon2 - lon1) * Math.PI / 180;
+
+            const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+                    Math.cos(φ1) * Math.cos(φ2) *
+                    Math.sin(Δλ/2) * Math.sin(Δλ/2);
+            const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+
+            return R * c;
+        }
+
+        // Update route progress periodically
+        setInterval(updateRouteProgress, 1000);
+
+        // Initial map update
+        updateMap();
+
+        // DOM elements for instrument data
+        const headingDisplay = document.getElementById('heading-display');
+        const timeDisplay = document.getElementById('time-display');
+        const tempDisplay = document.getElementById('temp-display');
+        const altitudeDisplay = document.getElementById('altitude-display');
+        const speedDisplay = document.getElementById('speed-display');
+        
+        // Listen for instrument data updates from Firebase
+        database.ref('instrumentData').on('value', (snapshot) => {
+            if (snapshot && snapshot.exists()) {
+                const data = snapshot.val();
+                
+                if (data.heading) {
+                    headingDisplay.textContent = data.heading;
+                }
+                if (data.time) {
+                    timeDisplay.textContent = data.time;
+                }
+                if (data.temperature) {
+                    tempDisplay.textContent = data.temperature;
+                }
+                if (data.altitude !== undefined) {
+                    altitudeDisplay.textContent = Math.round(data.altitude);
+                }
+                if (data.speed !== undefined) {
+                    speedDisplay.textContent = Math.round(data.speed);
+                }
+            }
         });
     </script>
 </body>
