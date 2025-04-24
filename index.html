@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Airy Console">
@@ -34,6 +34,8 @@
             -webkit-user-select: none;
             user-select: none;
             touch-action: none;
+            /* Hide home indicator */
+            padding-bottom: env(safe-area-inset-bottom);
         }
         
         #console-container {
@@ -42,6 +44,17 @@
             position: relative;
             background: #050A0E;
             overflow: hidden;
+        }
+        
+        /* Hide home indicator with a black area at bottom */
+        #home-indicator-cover {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: env(safe-area-inset-bottom);
+            background-color: #000;
+            z-index: 9999;
         }
         
         .gradient-top {
@@ -258,6 +271,9 @@
         </div>
     </div>
     
+    <!-- Add cover for home indicator -->
+    <div id="home-indicator-cover"></div>
+    
     <script>
         // Your Firebase configuration - replace with your Firebase project details
         const firebaseConfig = {
@@ -393,6 +409,11 @@
                     window.scrollTo(0, 0);
                 }
             });
+            
+            // Additional fix for iOS to hide UI elements
+            if (navigator.standalone) {
+                document.documentElement.style.setProperty('--sat', '0');
+            }
             
             updateDebugStatus('Page loaded');
         });

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Airy Console">
@@ -25,6 +25,8 @@
             -webkit-user-select: none;
             user-select: none;
             touch-action: none;
+            /* Hide home indicator */
+            padding-bottom: env(safe-area-inset-bottom);
         }
         
         #background-container {
@@ -37,6 +39,17 @@
             position: relative;
         }
         
+        /* Hide home indicator with a black area at bottom */
+        #home-indicator-cover {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            height: env(safe-area-inset-bottom);
+            background-color: #000;
+            z-index: 9999;
+        }
+        
         /* iPad 11-inch specific optimizations */
         @media only screen and (min-width: 834px) and (max-height: 1194px),
                only screen and (min-width: 1194px) and (max-height: 834px) {
@@ -46,12 +59,15 @@
 </head>
 <body>
     <div id="background-container">
-        <div style="left: 312px; top: 584px; position: absolute; transform: rotate(90deg); transform-origin: top left; text-align: center; justify-content: center; display: flex; flex-direction: column; color: #E6E6E6; font-size: 39.45px; font-family: 'Bai Jamjuree', sans-serif; font-style: italic; font-weight: 700; word-wrap: break-word">S</div>
-        <div style="left: 554px; top: 465px; position: absolute; transform: rotate(90deg); transform-origin: top left; text-align: center; justify-content: center; display: flex; flex-direction: column; color: #E6E6E6; font-size: 13.15px; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; word-wrap: break-word">9:41 AM</div>
-        <div style="left: 554px; top: 701px; position: absolute; transform: rotate(90deg); transform-origin: top left; text-align: center; justify-content: center; display: flex; flex-direction: column; color: #E6E6E6; font-size: 13.15px; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; word-wrap: break-word">16℃</div>
-        <div style="left: 456px; top: 306px; position: absolute; transform: rotate(90deg); transform-origin: top left; text-align: center; justify-content: center; display: flex; flex-direction: column; color: #E6E6E6; font-size: 39.45px; font-family: 'Bai Jamjuree', sans-serif; font-style: italic; font-weight: 700; word-wrap: break-word">26</div>
-        <div style="left: 455px; top: 842px; position: absolute; transform: rotate(90deg); transform-origin: top left; text-align: center; justify-content: center; display: flex; flex-direction: column; color: #E6E6E6; font-size: 39.45px; font-family: 'Bai Jamjuree', sans-serif; font-style: italic; font-weight: 700; word-wrap: break-word">26</div>
+        <div style="left: 301px; top: 584px; position: absolute; transform: rotate(90deg); transform-origin: top left; text-align: center; justify-content: center; display: flex; flex-direction: column; color: #E6E6E6; font-size: 39.45px; font-family: 'Bai Jamjuree', sans-serif; font-style: italic; font-weight: 700; word-wrap: break-word">S</div>
+        <div style="left: 570px; top: 465px; position: absolute; transform: rotate(90deg); transform-origin: top left; text-align: center; justify-content: center; display: flex; flex-direction: column; color: #E6E6E6; font-size: 13.15px; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; word-wrap: break-word">9:41 AM</div>
+        <div style="left: 573px; top: 701px; position: absolute; transform: rotate(90deg); transform-origin: top left; text-align: center; justify-content: center; display: flex; flex-direction: column; color: #E6E6E6; font-size: 13.15px; font-family: 'Bai Jamjuree', sans-serif; font-weight: 600; word-wrap: break-word">16℃</div>
+        <div style="left: 456px; top: 256px; position: absolute; transform: rotate(90deg); transform-origin: top left; text-align: center; justify-content: center; display: flex; flex-direction: column; color: #E6E6E6; font-size: 39.45px; font-family: 'Bai Jamjuree', sans-serif; font-style: italic; font-weight: 700; word-wrap: break-word">26</div>
+        <div style="left: 455px; top: 884px; position: absolute; transform: rotate(90deg); transform-origin: top left; text-align: center; justify-content: center; display: flex; flex-direction: column; color: #E6E6E6; font-size: 39.45px; font-family: 'Bai Jamjuree', sans-serif; font-style: italic; font-weight: 700; word-wrap: break-word">26</div>
     </div>
+    
+    <!-- Add cover for home indicator -->
+    <div id="home-indicator-cover"></div>
     
     <script>
         // Prevent scrolling
@@ -65,6 +81,11 @@
             setTimeout(() => {
                 window.scrollTo(0, 0);
             }, 100);
+            
+            // Additional fix for iOS to hide UI elements
+            if (navigator.standalone) {
+                document.documentElement.style.setProperty('--sat', '0');
+            }
         });
     </script>
 </body>
