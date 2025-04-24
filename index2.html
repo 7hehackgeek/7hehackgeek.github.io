@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="Airy Console">
@@ -25,8 +25,6 @@
             -webkit-user-select: none;
             user-select: none;
             touch-action: none;
-            /* Hide home indicator */
-            padding-bottom: env(safe-area-inset-bottom);
         }
         
         #background-container {
@@ -37,17 +35,6 @@
             background-position: left top;
             background-size: auto;
             position: relative;
-        }
-        
-        /* Hide home indicator with a black area at bottom */
-        #home-indicator-cover {
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            height: env(safe-area-inset-bottom);
-            background-color: #000;
-            z-index: 9999;
         }
         
         /* iPad 11-inch specific optimizations */
@@ -66,9 +53,6 @@
         <div style="left: 455px; top: 884px; position: absolute; transform: rotate(90deg); transform-origin: top left; text-align: center; justify-content: center; display: flex; flex-direction: column; color: #E6E6E6; font-size: 39.45px; font-family: 'Bai Jamjuree', sans-serif; font-style: italic; font-weight: 700; word-wrap: break-word">26</div>
     </div>
     
-    <!-- Add cover for home indicator -->
-    <div id="home-indicator-cover"></div>
-    
     <script>
         // Prevent scrolling
         document.addEventListener('touchmove', (e) => {
@@ -81,11 +65,6 @@
             setTimeout(() => {
                 window.scrollTo(0, 0);
             }, 100);
-            
-            // Additional fix for iOS to hide UI elements
-            if (navigator.standalone) {
-                document.documentElement.style.setProperty('--sat', '0');
-            }
         });
     </script>
 </body>
