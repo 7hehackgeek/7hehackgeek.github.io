@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Airy Console">
+    <link rel="apple-touch-icon" href="./Images/Vector.png">
+    <link rel="manifest" href="manifest.json">
+    <title>Airy Center Console</title>
+    
+    <!-- Firebase SDK -->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-database.js"></script>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+        @import url('https://fonts.cdnfonts.com/css/sf-pro-rounded');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body, html {
+            width: 100%;
+            height: 100%;
+            background: #050A0E;
+            overflow: hidden;
+            font-family: 'SF Pro Rounded', sans-serif;
+            color: white;
+            -webkit-user-select: none;
+            user-select: none;
+            touch-action: none;
+        }
+        
+        #console-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            background: #050A0E;
+            overflow: hidden;
+        }
+        
+        .gradient-top {
+            width: 100%;
+            height: 490px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: url('./Images/topwave.png') top center no-repeat;
+            background-size: cover;
+            z-index: 1;
+        }
+        
+        .gradient-bottom {
+            width: 100%;
+            height: 490px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            background: url('./Images/bottomwave.png') bottom center no-repeat;
+            background-size: cover;
+            z-index: 1;
+        }
+        
+        .logo-container {
+            width: 167px;
+            height: 68px;
+            left: 50%;
+            top: 57px;
+            position: absolute;
+            transform: translateX(-50%);
+            z-index: 2;
+        }
+        
+        .temperature-container {
+            position: absolute;
+            display: flex;
+            align-items: center;
+            top: 74px;
+            z-index: 2;
+        }
+        
+        .temp-left-container {
+            left: 30px;
+        }
+        
+        .temp-right-container {
+            right: 30px;
+        }
+        
+        .temperature-circle {
+            width: 33px;
+            height: 33px;
+            background: rgba(255, 255, 255, 0.20);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 15px;
+        }
+        
+        .temperature-text {
+            color: white;
+            font-size: 20px;
+            font-weight: 400;
+        }
+        
+        .temp-arrow {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            font-weight: bold;
+        }
+        
+        .arrow-blue {
+            color: #4790CE;
+        }
+        
+        .arrow-yellow {
+            color: #FFCC00;
+        }
+        
+        .center-image {
+            width: 463px;
+            height: 663px;
+            left: 50%;
+            top: 296px;
+            position: absolute;
+            transform: translateX(-50%);
+            mix-blend-mode: luminosity;
+            z-index: 2;
+        }
+        
+        .propeller-display {
+            position: absolute;
+            color: white;
+            font-size: 48px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            z-index: 3;
+            transition: all 0.3s ease;
+        }
+        
+        #tl-propeller {
+            left: 43px;
+            top: 382px;
+        }
+        
+        #bl-propeller {
+            left: 43px;
+            top: 818px;
+        }
+        
+        #tr-propeller {
+            right: 43px;
+            top: 382px;
+        }
+        
+        #br-propeller {
+            right: 43px;
+            top: 818px;
+        }
+        
+        .name-display {
+            position: absolute;
+            top: 150px;
+            width: 100%;
+            text-align: center;
+            font-size: 36px;
+            font-weight: bold;
+            z-index: 3;
+        }
+        
+        /* Debug overlay for development */
+        #debug-overlay {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: lime;
+            padding: 5px;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 12px;
+            z-index: 100;
+            max-width: 80%;
+            overflow: hidden;
+            display: none;
+        }
+        
+        /* Show debug overlay when in debug mode */
+        body.debug #debug-overlay {
+            display: block;
+        }
+        
+        /* iPad 11-inch specific optimizations */
+        @media only screen and (min-width: 834px) and (max-height: 1194px),
+               only screen and (min-width: 1194px) and (max-height: 834px) {
+            /* Adjust for iPad Pro 11" in both orientations */
+            .center-image {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="console-container">
+        <div class="gradient-top"></div>
+        <div class="gradient-bottom"></div>
+        
+        <div class="logo-container">
+            <img src="./Images/Vector.png" alt="Airy Logo" style="width: 100%; height: 100%;">
+        </div>
+        
+        <!-- Left temperature display -->
+        <div class="temperature-container temp-left-container">
+            <div class="temp-arrow arrow-blue">&#10094;</div>
+            <div class="temperature-circle">
+                <span class="temperature-text" id="temp-left">25</span>
+            </div>
+            <div class="temp-arrow arrow-yellow">&#10095;</div>
+        </div>
+        
+        <!-- Right temperature display -->
+        <div class="temperature-container temp-right-container">
+            <div class="temp-arrow arrow-blue">&#10094;</div>
+            <div class="temperature-circle">
+                <span class="temperature-text" id="temp-right">25</span>
+            </div>
+            <div class="temp-arrow arrow-yellow">&#10095;</div>
+        </div>
+        
+        <div class="name-display" id="name-display">HI! GUEST</div>
+        
+        <img src="./Images/image 148.png" alt="Aircraft" class="center-image">
+        
+        <div class="propeller-display" id="tl-propeller">0%</div>
+        <div class="propeller-display" id="bl-propeller">0%</div>
+        <div class="propeller-display" id="tr-propeller">0%</div>
+        <div class="propeller-display" id="br-propeller">0%</div>
+        
+        <!-- Debug overlay for development -->
+        <div id="debug-overlay">
+            <div>Firebase Status: <span id="firebase-status">Initializing...</span></div>
+            <div>Propeller Data: <span id="propeller-data">Waiting...</span></div>
+            <div>Last Update: <span id="last-update">None</span></div>
+        </div>
+    </div>
+    
+    <script>
+        // Your Firebase configuration - replace with your Firebase project details
+        const firebaseConfig = {
+  apiKey: "AIzaSyB56hW3EY5Z9h-pCROpus4JfIHWfO-RFWo",
+  authDomain: "airy-7c2b7.firebaseapp.com",
+  databaseURL: "https://airy-7c2b7-default-rtdb.firebaseio.com",
+  projectId: "airy-7c2b7",
+  storageBucket: "airy-7c2b7.firebasestorage.app",
+  messagingSenderId: "36806953957",
+  appId: "1:36806953957:web:9fbebec33db109b70f7d0c",
+  measurementId: "G-NM4T0FGJXF"
+};
+        
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const database = firebase.database();
+        
+        // Check if we're in debug mode (add ?debug=true to URL to enable)
+        const urlParams = new URLSearchParams(window.location.search);
+        if (urlParams.get('debug') === 'true') {
+            document.body.classList.add('debug');
+        }
+        
+        // Debug elements
+        const firebaseStatus = document.getElementById('firebase-status');
+        const propellerData = document.getElementById('propeller-data');
+        const lastUpdate = document.getElementById('last-update');
+        
+        // DOM elements
+        const nameDisplay = document.getElementById('name-display');
+        const tlPropeller = document.getElementById('tl-propeller');
+        const trPropeller = document.getElementById('tr-propeller');
+        const blPropeller = document.getElementById('bl-propeller');
+        const brPropeller = document.getElementById('br-propeller');
+        const tempLeft = document.getElementById('temp-left');
+        const tempRight = document.getElementById('temp-right');
+        
+        // Update debug status
+        function updateDebugStatus(status) {
+            if (firebaseStatus) {
+                firebaseStatus.textContent = status;
+            }
+        }
+        
+        // Update the timestamp in debug overlay
+        function updateTimestamp() {
+            if (lastUpdate) {
+                const now = new Date();
+                lastUpdate.textContent = now.toLocaleTimeString();
+            }
+        }
+        
+        // Listen for user name updates
+        database.ref('userPreferences').on('value', (snapshot) => {
+            if (snapshot && snapshot.exists() && snapshot.child('name').exists()) {
+                const userName = snapshot.child('name').val() || 'GUEST';
+                nameDisplay.textContent = `HI! ${userName.toUpperCase()}`;
+                console.log(`Updated name display: ${userName}`);
+                updateDebugStatus('Connected - Name received');
+            }
+        });
+        
+        // Create propellerSpeeds node if it doesn't exist
+        database.ref('propellerSpeeds').once('value', (snapshot) => {
+            if (!snapshot.exists()) {
+                console.log('Creating propellerSpeeds node');
+                database.ref('propellerSpeeds').set({
+                    propeller1: 0,
+                    propeller2: 0,
+                    propeller3: 0,
+                    propeller4: 0
+                });
+                updateDebugStatus('Created propellerSpeeds node');
+            }
+        });
+        
+        // Listen for propeller speed updates
+        database.ref('propellerSpeeds').on('value', (snapshot) => {
+            if (snapshot && snapshot.exists()) {
+                // Get the propeller speeds (assumes Unity pushes percentage values)
+                const speed1 = snapshot.child('propeller1').val() || 0;
+                const speed2 = snapshot.child('propeller2').val() || 0;
+                const speed3 = snapshot.child('propeller3').val() || 0;
+                const speed4 = snapshot.child('propeller4').val() || 0;
+                
+                // Update the display
+                tlPropeller.textContent = `${speed1}%`;
+                trPropeller.textContent = `${speed2}%`;
+                blPropeller.textContent = `${speed3}%`;
+                brPropeller.textContent = `${speed4}%`;
+                
+                // Update debug info
+                if (propellerData) {
+                    propellerData.textContent = `TL:${speed1}% TR:${speed2}% BL:${speed3}% BR:${speed4}%`;
+                }
+                updateTimestamp();
+                
+                console.log(`Updated propeller speeds: ${speed1}%, ${speed2}%, ${speed3}%, ${speed4}%`);
+            }
+        });
+        
+        // Listen for weather updates
+        database.ref('weather').on('value', (snapshot) => {
+            if (snapshot && snapshot.exists()) {
+                const temperature = snapshot.child('temperature').val() || '25';
+                tempLeft.textContent = temperature;
+                tempRight.textContent = temperature;
+                console.log(`Updated temperature: ${temperature}°`);
+            }
+        });
+        
+        // Handle device orientation and prevent scrolling
+        document.addEventListener('touchmove', (e) => {
+            e.preventDefault();
+        }, { passive: false });
+        
+        // Force full screen on iOS when added to home screen
+        window.addEventListener('load', () => {
+            // Force scroll to top for full screen view
+            setTimeout(() => {
+                window.scrollTo(0, 0);
+            }, 100);
+            
+            // iOS-specific full screen fix
+            document.addEventListener('touchend', () => {
+                // Fix for Safari 13+ issue where addressbar may reappear
+                if (!window.navigator.standalone) {
+                    window.scrollTo(0, 0);
+                }
+            });
+            
+            updateDebugStatus('Page loaded');
+        });
+    </script>
+    
+    <!-- Include our Firebase sync script -->
+    <script src="firebase-sync.js"></script>
+    
+    <!-- Include the test script (only activated with ?test=true in URL) -->
+    <script src="firebase-test.js"></script>
+</body>
+</html>
