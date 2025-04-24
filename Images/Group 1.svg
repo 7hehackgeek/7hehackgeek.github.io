@@ -1,0 +1,15 @@
+<svg width="10" height="14" viewBox="0 0 10 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Group 1">
+<g id="Rectangle 6" filter="url(#filter0_f_1015_759)">
+<path d="M6.62824 5.35801C6.75154 5.4813 6.8208 5.64852 6.8208 5.82289L6.8208 10.5377C6.8208 11.1234 6.11266 11.4167 5.6985 11.0025L3.72622 9.03027C3.60292 8.90697 3.53366 8.73975 3.53366 8.56539L3.53366 3.8506C3.53366 3.2649 4.2418 2.97157 4.65596 3.38573L6.62824 5.35801Z" fill="#E6E6E6"/>
+</g>
+<path id="Rectangle 8" d="M6.62824 5.35801C6.75154 5.4813 6.8208 5.64852 6.8208 5.82289L6.8208 10.5377C6.8208 11.1234 6.11266 11.4167 5.6985 11.0025L3.72622 9.03027C3.60292 8.90697 3.53366 8.73975 3.53366 8.56539L3.53366 3.8506C3.53366 3.2649 4.2418 2.97157 4.65596 3.38573L6.62824 5.35801Z" fill="#E6E6E6"/>
+</g>
+<defs>
+<filter id="filter0_f_1015_759" x="0.903973" y="0.562176" width="8.54655" height="13.2641" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="1.31486" result="effect1_foregroundBlur_1015_759"/>
+</filter>
+</defs>
+</svg>

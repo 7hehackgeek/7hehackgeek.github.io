@@ -146,6 +146,11 @@
             transition: all 0.3s ease;
         }
         
+        /* Add cursor style for clickable element */
+        #br-propeller {
+            cursor: pointer;
+        }
+        
         #tl-propeller {
             left: 43px;
             top: 382px;
@@ -289,6 +294,11 @@
         const brPropeller = document.getElementById('br-propeller');
         const tempLeft = document.getElementById('temp-left');
         const tempRight = document.getElementById('temp-right');
+        
+        // Add click event to bottom right propeller to navigate to settings
+        brPropeller.addEventListener('click', function() {
+            window.location.href = 'index2.html';
+        });
         
         // Update debug status
         function updateDebugStatus(status) {
