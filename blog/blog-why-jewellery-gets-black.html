@@ -30,6 +30,15 @@
                     <li><a href="../index.html#collections" class="nav-link">Collections</a></li>
                     <li><a href="blog.html" class="nav-link">Blog</a></li>
                     <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                    <li>
+                        <div class="language-switcher">
+                            <select id="languageSelector">
+                                <option value="en">English</option>
+                                <option value="hi">हिंदी</option>
+                                <option value="pa">ਪੰਜਾਬੀ</option>
+                            </select>
+                        </div>
+                    </li>
                 </ul>
                 <div class="hamburger" id="hamburger">
                     <span></span>
@@ -44,50 +53,50 @@
     <section class="blog-post" style="padding-top: 120px;">
         <div class="container">
             <div class="blog-post-header">
-                <a href="blog.html" style="color: var(--primary-gold); text-decoration: none; margin-bottom: 2rem; display: inline-block; font-weight: 500;">
+                <a href="blog.html" style="color: var(--primary-gold); text-decoration: none; margin-bottom: 2rem; display: inline-block; font-weight: 500;" data-translate="backToBlog">
                     ← Back to Blog
                 </a>
                 <div class="blog-post-image">
-                    <span class="blog-icon" style="font-size: 5rem;">⚫</span>
+                    <img src="https://images.unsplash.com/photo-1603561596112-0a13211e0262?w=400&h=400&fit=crop&q=80" alt="Tarnished Gold and Silver Jewellery" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%;">
                 </div>
-                <h1 class="blog-post-title">Why Gold and Silver Jewellery Gets Black</h1>
+                <h1 class="blog-post-title" data-translate="post1Title">Why Gold and Silver Jewellery Gets Black</h1>
                 <div class="blog-meta">
-                    <span class="blog-date">📅 January 2024</span>
+                    <span class="blog-date" data-translate="date">January 2024</span>
                 </div>
             </div>
             
             <div class="blog-post-content">
-                <p class="blog-intro">Have you ever noticed your precious gold or silver jewellery turning black or tarnished? This is a common concern among jewellery owners, and understanding why it happens can help you maintain your pieces better.</p>
+                <p class="blog-intro" data-translate="post1Intro">Have you ever noticed your precious gold or silver jewellery turning black or tarnished? This is a common concern among jewellery owners, and understanding why it happens can help you maintain your pieces better.</p>
                 
                 <div class="blog-details">
-                    <h4>For Silver Jewellery:</h4>
-                    <p>Silver tarnishes when it reacts with sulfur compounds in the air, forming silver sulfide. This creates a dark layer on the surface. Factors that accelerate tarnishing include:</p>
+                    <h4 data-translate="post1SilverTitle">For Silver Jewellery:</h4>
+                    <p data-translate="post1SilverText">Silver tarnishes when it reacts with sulfur compounds in the air, forming silver sulfide. This creates a dark layer on the surface. Factors that accelerate tarnishing include:</p>
                     <ul>
-                        <li><strong>Humidity:</strong> High moisture levels increase tarnishing</li>
-                        <li><strong>Air pollution:</strong> Industrial areas have more sulfur compounds</li>
-                        <li><strong>Chemicals:</strong> Perfumes, lotions, and cleaning products can cause reactions</li>
-                        <li><strong>Storage:</strong> Exposure to air without proper protection</li>
+                        <li data-translate-html="post1Humidity"><strong>Humidity:</strong> High moisture levels increase tarnishing</li>
+                        <li data-translate-html="post1Pollution"><strong>Air pollution:</strong> Industrial areas have more sulfur compounds</li>
+                        <li data-translate-html="post1Chemicals"><strong>Chemicals:</strong> Perfumes, lotions, and cleaning products can cause reactions</li>
+                        <li data-translate-html="post1Storage"><strong>Storage:</strong> Exposure to air without proper protection</li>
                     </ul>
                     
-                    <h4>For Gold Jewellery:</h4>
-                    <p>Pure gold (24k) doesn't tarnish, but lower karat gold (22k, 18k, 14k) contains other metals like copper, silver, or zinc that can oxidize and cause discoloration. The blackening occurs because:</p>
+                    <h4 data-translate="post1GoldTitle">For Gold Jewellery:</h4>
+                    <p data-translate="post1GoldText">Pure gold (24k) doesn't tarnish, but lower karat gold (22k, 18k, 14k) contains other metals like copper, silver, or zinc that can oxidize and cause discoloration. The blackening occurs because:</p>
                     <ul>
-                        <li><strong>Alloy metals:</strong> Copper and silver in the alloy can tarnish</li>
-                        <li><strong>Chemical reactions:</strong> Contact with cosmetics, sweat, or chemicals</li>
-                        <li><strong>Oxidation:</strong> Metals in the alloy react with oxygen over time</li>
+                        <li data-translate-html="post1Alloy"><strong>Alloy metals:</strong> Copper and silver in the alloy can tarnish</li>
+                        <li data-translate-html="post1Reactions"><strong>Chemical reactions:</strong> Contact with cosmetics, sweat, or chemicals</li>
+                        <li data-translate-html="post1Oxidation"><strong>Oxidation:</strong> Metals in the alloy react with oxygen over time</li>
                     </ul>
                     
-                    <h4>Prevention Tips:</h4>
+                    <h4 data-translate="post1PreventionTitle">Prevention Tips:</h4>
                     <ul>
-                        <li>Store jewellery in airtight containers or anti-tarnish bags</li>
-                        <li>Clean regularly with a soft cloth</li>
-                        <li>Remove jewellery before swimming, showering, or applying cosmetics</li>
-                        <li>Use professional cleaning services periodically</li>
+                        <li data-translate="post1Tip1">Store jewellery in airtight containers or anti-tarnish bags</li>
+                        <li data-translate="post1Tip2">Clean regularly with a soft cloth</li>
+                        <li data-translate="post1Tip3">Remove jewellery before swimming, showering, or applying cosmetics</li>
+                        <li data-translate="post1Tip4">Use professional cleaning services periodically</li>
                     </ul>
                 </div>
 
                 <div class="blog-post-navigation">
-                    <a href="blog.html" class="blog-nav-link">← Back to All Posts</a>
+                    <a href="blog.html" class="blog-nav-link" data-translate="backToAllPosts">← Back to All Posts</a>
                 </div>
             </div>
         </div>
@@ -122,6 +131,7 @@
         </div>
     </footer>
 
+    <script src="translations.js"></script>
     <script src="../script.js"></script>
 </body>
 </html>

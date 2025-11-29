@@ -1,0 +1,266 @@
+// Blog Translations - Hindi and Punjabi
+const translations = {
+    en: {
+        // Blog Listing Page
+        blogTitle: "Jewellery Insights",
+        blogSubtitle: "Expert knowledge about jewellery care and craftsmanship",
+        backToBlog: "← Back to Blog",
+        readMore: "Read More →",
+        
+        // Blog Post 1: Why Jewellery Gets Black
+        post1Title: "Why Gold and Silver Jewellery Gets Black",
+        post1Intro: "Have you ever noticed your precious gold or silver jewellery turning black or tarnished? This is a common concern among jewellery owners, and understanding why it happens can help you maintain your pieces better.",
+        post1SilverTitle: "For Silver Jewellery:",
+        post1SilverText: "Silver tarnishes when it reacts with sulfur compounds in the air, forming silver sulfide. This creates a dark layer on the surface. Factors that accelerate tarnishing include:",
+        post1Humidity: "<strong>Humidity:</strong> High moisture levels increase tarnishing",
+        post1Pollution: "<strong>Air pollution:</strong> Industrial areas have more sulfur compounds",
+        post1Chemicals: "<strong>Chemicals:</strong> Perfumes, lotions, and cleaning products can cause reactions",
+        post1Storage: "<strong>Storage:</strong> Exposure to air without proper protection",
+        post1GoldTitle: "For Gold Jewellery:",
+        post1GoldText: "Pure gold (24k) doesn't tarnish, but lower karat gold (22k, 18k, 14k) contains other metals like copper, silver, or zinc that can oxidize and cause discoloration. The blackening occurs because:",
+        post1Alloy: "<strong>Alloy metals:</strong> Copper and silver in the alloy can tarnish",
+        post1Reactions: "<strong>Chemical reactions:</strong> Contact with cosmetics, sweat, or chemicals",
+        post1Oxidation: "<strong>Oxidation:</strong> Metals in the alloy react with oxygen over time",
+        post1PreventionTitle: "Prevention Tips:",
+        post1Tip1: "Store jewellery in airtight containers or anti-tarnish bags",
+        post1Tip2: "Clean regularly with a soft cloth",
+        post1Tip3: "Remove jewellery before swimming, showering, or applying cosmetics",
+        post1Tip4: "Use professional cleaning services periodically",
+        
+        // Blog Post 2: Why 22K Instead of 24K
+        post2Title: "Why Most Jewellery is 22K Instead of 24K",
+        post2Intro: "While 24-karat gold is the purest form of gold (99.9% pure), most jewellery is crafted in 22-karat gold. This choice isn't about cost-cutting—it's about creating durable, wearable, and beautiful pieces.",
+        post2KaratTitle: "Understanding Karat Purity:",
+        post2K24: "<strong>24K Gold:</strong> 99.9% pure gold - very soft and malleable",
+        post2K22: "<strong>22K Gold:</strong> 91.7% pure gold - mixed with 8.3% other metals",
+        post2K18: "<strong>18K Gold:</strong> 75% pure gold - mixed with 25% other metals",
+        post2K14: "<strong>14K Gold:</strong> 58.3% pure gold - mixed with 41.7% other metals",
+        post2WhyTitle: "Why 22K is Preferred for Jewellery:",
+        post2Durability: "<strong>Durability:</strong> 24K gold is extremely soft (2.5 on Mohs scale) and can easily bend, scratch, or lose its shape. 22K gold is more durable while maintaining high purity.",
+        post2Wearability: "<strong>Wearability:</strong> 22K jewellery can withstand daily wear without losing its form or getting damaged easily.",
+        post2Design: "<strong>Design Flexibility:</strong> The added strength allows for intricate designs, detailed engravings, and secure stone settings that wouldn't be possible with pure gold.",
+        post2Value: "<strong>Value Balance:</strong> 22K offers an excellent balance between gold purity and practical durability, making it ideal for heirloom pieces.",
+        post2Cultural: "<strong>Cultural Preference:</strong> In many cultures, especially in India, 22K gold is the traditional standard for jewellery, representing both purity and practicality.",
+        post2WhenTitle: "When 24K is Used:",
+        post2WhenText: "24K gold is typically reserved for investment purposes (bars, coins) or simple, minimal jewellery pieces that don't require structural strength. For most jewellery, especially pieces with stones or intricate designs, 22K is the practical choice.",
+        
+        // Blog Post 3: Why Diamond Jewellery 14K/18K
+        post3Title: "Why Diamond Jewellery is Made in 14K or 18K Gold",
+        post3Intro: "Diamond jewellery is almost exclusively crafted in 14K or 18K gold rather than higher karat gold. This choice is crucial for both the security of your diamonds and the longevity of your jewellery.",
+        post3ScienceTitle: "The Science Behind It:",
+        post3ScienceText: "Diamonds are the hardest natural material (10 on Mohs scale), but they need a strong, secure setting. Higher karat gold (22K or 24K) is too soft to hold diamonds securely.",
+        post3WhyTitle: "Why 14K and 18K Gold:",
+        post3Secure: "<strong>Secure Stone Setting:</strong> Lower karat gold is harder and stronger, providing better grip for prongs and bezels that hold diamonds in place. This prevents stones from becoming loose or falling out.",
+        post3Durability: "<strong>Durability:</strong> 14K and 18K gold are significantly more durable than 22K or 24K, making them ideal for rings, bracelets, and other pieces that experience daily wear and impact.",
+        post3Versatility: "<strong>Design Versatility:</strong> The added strength allows for delicate prong settings, pave work, and intricate designs that showcase diamonds beautifully while keeping them secure.",
+        post3Scratch: "<strong>Scratch Resistance:</strong> The alloy metals (copper, silver, zinc) make the gold harder, reducing scratches and maintaining the piece's appearance over time.",
+        post3ColorTitle: "Color Options: Different alloys create various gold colors:",
+        post3Yellow: "<strong>Yellow Gold:</strong> Mixed with copper and silver",
+        post3White: "<strong>White Gold:</strong> Mixed with nickel or palladium, often plated with rhodium",
+        post3Rose: "<strong>Rose Gold:</strong> Mixed with more copper for a pinkish hue",
+        post3CompareTitle: "14K vs 18K for Diamonds:",
+        post3K14: "<strong>14K Gold (58.3% pure):</strong> Maximum durability, most affordable, ideal for everyday wear and active lifestyles. Slightly less yellow in color.",
+        post3K18: "<strong>18K Gold (75% pure):</strong> Better balance of purity and strength, richer gold color, preferred for fine jewellery. Slightly softer than 14K but still very durable.",
+        post3WhyNotTitle: "Why Not Higher Karat?",
+        post3WhyNotText: "22K or 24K gold would be too soft to securely hold diamonds. Prongs would bend, settings would loosen, and you'd risk losing your precious stones. The slight reduction in gold purity is a necessary trade-off for security and durability.",
+        
+        // Common
+        backToAllPosts: "← Back to All Posts",
+        date: "January 2024"
+    },
+    hi: {
+        // Blog Listing Page
+        blogTitle: "गहने की जानकारी",
+        blogSubtitle: "गहनों की देखभाल और कारीगरी के बारे में विशेषज्ञ ज्ञान",
+        backToBlog: "← ब्लॉग पर वापस जाएं",
+        readMore: "और पढ़ें →",
+        
+        // Blog Post 1: Why Jewellery Gets Black
+        post1Title: "सोने और चांदी के गहने काले क्यों हो जाते हैं",
+        post1Intro: "क्या आपने कभी देखा है कि आपके कीमती सोने या चांदी के गहने काले या मैले हो जाते हैं? यह गहने मालिकों के बीच एक आम चिंता है, और यह समझना कि ऐसा क्यों होता है, आपको अपने गहनों को बेहतर तरीके से बनाए रखने में मदद कर सकता है।",
+        post1SilverTitle: "चांदी के गहनों के लिए:",
+        post1SilverText: "चांदी तब मैली होती है जब यह हवा में सल्फर यौगिकों के साथ प्रतिक्रिया करती है, जिससे सिल्वर सल्फाइड बनता है। यह सतह पर एक गहरी परत बनाता है। मैलापन को तेज करने वाले कारकों में शामिल हैं:",
+        post1Humidity: "<strong>नमी:</strong> उच्च नमी स्तर मैलापन को बढ़ाता है",
+        post1Pollution: "<strong>वायु प्रदूषण:</strong> औद्योगिक क्षेत्रों में अधिक सल्फर यौगिक होते हैं",
+        post1Chemicals: "<strong>रसायन:</strong> इत्र, लोशन और सफाई उत्पाद प्रतिक्रियाएं पैदा कर सकते हैं",
+        post1Storage: "<strong>भंडारण:</strong> उचित सुरक्षा के बिना हवा के संपर्क में आना",
+        post1GoldTitle: "सोने के गहनों के लिए:",
+        post1GoldText: "शुद्ध सोना (24k) मैला नहीं होता, लेकिन कम कैरेट सोना (22k, 18k, 14k) में तांबा, चांदी या जस्ता जैसी अन्य धातुएं होती हैं जो ऑक्सीकरण कर सकती हैं और रंग बदल सकती हैं। कालापन इसलिए होता है क्योंकि:",
+        post1Alloy: "<strong>मिश्र धातु धातु:</strong> मिश्र धातु में तांबा और चांदी मैली हो सकती है",
+        post1Reactions: "<strong>रासायनिक प्रतिक्रियाएं:</strong> सौंदर्य प्रसाधन, पसीना या रसायनों के संपर्क में आना",
+        post1Oxidation: "<strong>ऑक्सीकरण:</strong> समय के साथ मिश्र धातु में धातुएं ऑक्सीजन के साथ प्रतिक्रिया करती हैं",
+        post1PreventionTitle: "रोकथाम के सुझाव:",
+        post1Tip1: "गहनों को हवा-रोधी कंटेनर या एंटी-टार्निश बैग में रखें",
+        post1Tip2: "नियमित रूप से नरम कपड़े से साफ करें",
+        post1Tip3: "तैराकी, स्नान करने या सौंदर्य प्रसाधन लगाने से पहले गहने उतारें",
+        post1Tip4: "समय-समय पर पेशेवर सफाई सेवाओं का उपयोग करें",
+        
+        // Blog Post 2: Why 22K Instead of 24K
+        post2Title: "अधिकांश गहने 24K के बजाय 22K में क्यों बनाए जाते हैं",
+        post2Intro: "जबकि 24-कैरेट सोना सोने का सबसे शुद्ध रूप है (99.9% शुद्ध), अधिकांश गहने 22-कैरेट सोने में बनाए जाते हैं। यह विकल्प लागत कटौती के बारे में नहीं है—यह टिकाऊ, पहनने योग्य और सुंदर टुकड़े बनाने के बारे में है।",
+        post2KaratTitle: "कैरेट शुद्धता को समझना:",
+        post2K24: "<strong>24K सोना:</strong> 99.9% शुद्ध सोना - बहुत नरम और आकार बदलने योग्य",
+        post2K22: "<strong>22K सोना:</strong> 91.7% शुद्ध सोना - 8.3% अन्य धातुओं के साथ मिश्रित",
+        post2K18: "<strong>18K सोना:</strong> 75% शुद्ध सोना - 25% अन्य धातुओं के साथ मिश्रित",
+        post2K14: "<strong>14K सोना:</strong> 58.3% शुद्ध सोना - 41.7% अन्य धातुओं के साथ मिश्रित",
+        post2WhyTitle: "गहनों के लिए 22K क्यों पसंद किया जाता है:",
+        post2Durability: "<strong>टिकाऊपन:</strong> 24K सोना अत्यधिक नरम (मोह्स पैमाने पर 2.5) है और आसानी से मुड़ सकता है, खरोंच सकता है या अपना आकार खो सकता है। 22K सोना उच्च शुद्धता बनाए रखते हुए अधिक टिकाऊ है।",
+        post2Wearability: "<strong>पहनने योग्यता:</strong> 22K गहने दैनिक पहनावे को अपना रूप खोए बिना या आसानी से क्षतिग्रस्त हुए बिना सहन कर सकते हैं।",
+        post2Design: "<strong>डिज़ाइन लचीलापन:</strong> अतिरिक्त ताकत जटिल डिज़ाइन, विस्तृत नक्काशी और सुरक्षित पत्थर सेटिंग्स की अनुमति देती है जो शुद्ध सोने के साथ संभव नहीं होगी।",
+        post2Value: "<strong>मूल्य संतुलन:</strong> 22K सोने की शुद्धता और व्यावहारिक टिकाऊपन के बीच एक उत्कृष्ट संतुलन प्रदान करता है, जिससे यह विरासत के टुकड़ों के लिए आदर्श बनता है।",
+        post2Cultural: "<strong>सांस्कृतिक प्राथमिकता:</strong> कई संस्कृतियों में, विशेष रूप से भारत में, 22K सोना गहनों के लिए पारंपरिक मानक है, जो शुद्धता और व्यावहारिकता दोनों का प्रतिनिधित्व करता है।",
+        post2WhenTitle: "जब 24K का उपयोग किया जाता है:",
+        post2WhenText: "24K सोना आमतौर पर निवेश उद्देश्यों (बार, सिक्के) या सरल, न्यूनतम गहने के टुकड़ों के लिए आरक्षित होता है जिन्हें संरचनात्मक ताकत की आवश्यकता नहीं होती है। अधिकांश गहनों के लिए, विशेष रूप से पत्थरों या जटिल डिज़ाइन वाले टुकड़ों के लिए, 22K व्यावहारिक विकल्प है।",
+        
+        // Blog Post 3: Why Diamond Jewellery 14K/18K
+        post3Title: "हीरे के गहने 14K या 18K सोने में क्यों बनाए जाते हैं",
+        post3Intro: "हीरे के गहने लगभग विशेष रूप से उच्च कैरेट सोने के बजाय 14K या 18K सोने में बनाए जाते हैं। यह विकल्प आपके हीरों की सुरक्षा और आपके गहनों की दीर्घायु दोनों के लिए महत्वपूर्ण है।",
+        post3ScienceTitle: "इसके पीछे का विज्ञान:",
+        post3ScienceText: "हीरे सबसे कठोर प्राकृतिक सामग्री हैं (मोह्स पैमाने पर 10), लेकिन उन्हें एक मजबूत, सुरक्षित सेटिंग की आवश्यकता होती है। उच्च कैरेट सोना (22K या 24K) हीरों को सुरक्षित रूप से पकड़ने के लिए बहुत नरम है।",
+        post3WhyTitle: "14K और 18K सोना क्यों:",
+        post3Secure: "<strong>सुरक्षित पत्थर सेटिंग:</strong> कम कैरेट सोना कठोर और मजबूत होता है, जो हीरों को जगह में रखने वाले प्रोंग और बेज़ल के लिए बेहतर पकड़ प्रदान करता है। यह पत्थरों को ढीला होने या गिरने से रोकता है।",
+        post3Durability: "<strong>टिकाऊपन:</strong> 14K और 18K सोना 22K या 24K की तुलना में काफी अधिक टिकाऊ है, जिससे यह अंगूठियों, कंगन और अन्य टुकड़ों के लिए आदर्श है जो दैनिक पहनावे और प्रभाव का अनुभव करते हैं।",
+        post3Versatility: "<strong>डिज़ाइन बहुमुखी प्रतिभा:</strong> अतिरिक्त ताकत नाजुक प्रोंग सेटिंग्स, पेव काम और जटिल डिज़ाइन की अनुमति देती है जो हीरों को सुंदर रूप से प्रदर्शित करते हुए उन्हें सुरक्षित रखती है।",
+        post3Scratch: "<strong>खरोंच प्रतिरोध:</strong> मिश्र धातु धातु (तांबा, चांदी, जस्ता) सोने को कठोर बनाती है, खरोंच को कम करती है और समय के साथ टुकड़े की उपस्थिति बनाए रखती है।",
+        post3ColorTitle: "Color Options: Different alloys create various gold colors:",
+        post3Yellow: "<strong>पीला सोना:</strong> तांबा और चांदी के साथ मिश्रित",
+        post3White: "<strong>सफेद सोना:</strong> निकल या पैलेडियम के साथ मिश्रित, अक्सर रोडियम के साथ लेपित",
+        post3Rose: "<strong>गुलाबी सोना:</strong> गुलाबी रंग के लिए अधिक तांबे के साथ मिश्रित",
+        post3CompareTitle: "14K vs 18K for Diamonds:",
+        post3K14: "<strong>14K सोना (58.3% शुद्ध):</strong> अधिकतम टिकाऊपन, सबसे सस्ती, रोजमर्रा के पहनावे और सक्रिय जीवनशैली के लिए आदर्श। रंग में थोड़ा कम पीला।",
+        post3K18: "<strong>18K सोना (75% शुद्ध):</strong> शुद्धता और ताकत का बेहतर संतुलन, समृद्ध सोने का रंग, बेहतरीन गहनों के लिए पसंदीदा। 14K की तुलना में थोड़ा नरम लेकिन फिर भी बहुत टिकाऊ।",
+        post3WhyNotTitle: "उच्च कैरेट क्यों नहीं?",
+        post3WhyNotText: "22K या 24K सोना हीरों को सुरक्षित रूप से पकड़ने के लिए बहुत नरम होगा। प्रोंग मुड़ जाएंगे, सेटिंग्स ढीली हो जाएंगी, और आप अपने कीमती पत्थरों को खोने का जोखिम उठाएंगे। सुरक्षा और टिकाऊपन के लिए सोने की शुद्धता में मामूली कमी एक आवश्यक समझौता है।",
+        
+        // Common
+        backToAllPosts: "← सभी पोस्ट पर वापस जाएं",
+        date: "जनवरी 2024"
+    },
+    pa: {
+        // Blog Listing Page
+        blogTitle: "ਗਹਿਣਿਆਂ ਬਾਰੇ ਜਾਣਕਾਰੀ",
+        blogSubtitle: "ਗਹਿਣਿਆਂ ਦੀ ਦੇਖਭਾਲ ਅਤੇ ਕਾਰੀਗਰੀ ਬਾਰੇ ਮਾਹਿਰ ਗਿਆਨ",
+        backToBlog: "← ਬਲੌਗ 'ਤੇ ਵਾਪਸ ਜਾਓ",
+        readMore: "ਹੋਰ ਪੜ੍ਹੋ →",
+        
+        // Blog Post 1: Why Jewellery Gets Black
+        post1Title: "ਸੋਨੇ ਅਤੇ ਚਾਂਦੀ ਦੇ ਗਹਿਣੇ ਕਾਲੇ ਕਿਉਂ ਹੋ ਜਾਂਦੇ ਹਨ",
+        post1Intro: "ਕੀ ਤੁਸੀਂ ਕਦੇ ਨੋਟਿਸ ਕੀਤਾ ਹੈ ਕਿ ਤੁਹਾਡੇ ਕੀਮਤੀ ਸੋਨੇ ਜਾਂ ਚਾਂਦੀ ਦੇ ਗਹਿਣੇ ਕਾਲੇ ਜਾਂ ਮੈਲੇ ਹੋ ਜਾਂਦੇ ਹਨ? ਇਹ ਗਹਿਣੇ ਮਾਲਕਾਂ ਵਿੱਚ ਇੱਕ ਆਮ ਚਿੰਤਾ ਹੈ, ਅਤੇ ਇਹ ਸਮਝਣਾ ਕਿ ਇਹ ਕਿਉਂ ਹੁੰਦਾ ਹੈ, ਤੁਹਾਡੀ ਮਦਦ ਕਰ ਸਕਦਾ ਹੈ ਕਿ ਤੁਸੀਂ ਆਪਣੇ ਟੁਕੜਿਆਂ ਨੂੰ ਬਿਹਤਰ ਰੱਖ ਸਕੋ।",
+        post1SilverTitle: "ਚਾਂਦੀ ਦੇ ਗਹਿਣਿਆਂ ਲਈ:",
+        post1SilverText: "ਚਾਂਦੀ ਤਾਂ ਮੈਲੀ ਹੋ ਜਾਂਦੀ ਹੈ ਜਦੋਂ ਇਹ ਹਵਾ ਵਿੱਚ ਸਲਫਰ ਯੌਗਿਕਾਂ ਨਾਲ ਪ੍ਰਤਿਕਿਰਿਆ ਕਰਦੀ ਹੈ, ਜਿਸ ਨਾਲ ਸਿਲਵਰ ਸਲਫਾਈਡ ਬਣਦਾ ਹੈ। ਇਹ ਸਤਹ 'ਤੇ ਇੱਕ ਗੂੜ੍ਹੀ ਪਰਤ ਬਣਾਉਂਦਾ ਹੈ। ਮੈਲਾਪਣ ਨੂੰ ਤੇਜ਼ ਕਰਨ ਵਾਲੇ ਕਾਰਕਾਂ ਵਿੱਚ ਸ਼ਾਮਲ ਹਨ:",
+        post1Humidity: "<strong>ਨਮੀ:</strong> ਉੱਚ ਨਮੀ ਦੇ ਪੱਧਰ ਮੈਲਾਪਣ ਨੂੰ ਵਧਾਉਂਦੇ ਹਨ",
+        post1Pollution: "<strong>ਵਾਯੂ ਪ੍ਰਦੂਸ਼ਣ:</strong> ਉਦਯੋਗਿਕ ਖੇਤਰਾਂ ਵਿੱਚ ਵਧੇਰੇ ਸਲਫਰ ਯੌਗਿਕ ਹੁੰਦੇ ਹਨ",
+        post1Chemicals: "<strong>ਰਸਾਇਣ:</strong> ਪਰਫਿਊਮ, ਲੋਸ਼ਨ ਅਤੇ ਸਫਾਈ ਉਤਪਾਦ ਪ੍ਰਤਿਕਿਰਿਆਵਾਂ ਪੈਦਾ ਕਰ ਸਕਦੇ ਹਨ",
+        post1Storage: "<strong>ਸਟੋਰੇਜ:</strong> ਢੁਕਵੀਂ ਸੁਰੱਖਿਆ ਦੇ ਬਿਨਾਂ ਹਵਾ ਦੇ ਸੰਪਰਕ ਵਿੱਚ ਆਉਣਾ",
+        post1GoldTitle: "ਸੋਨੇ ਦੇ ਗਹਿਣਿਆਂ ਲਈ:",
+        post1GoldText: "ਸ਼ੁੱਧ ਸੋਨਾ (24k) ਮੈਲਾ ਨਹੀਂ ਹੁੰਦਾ, ਪਰ ਘੱਟ ਕੈਰਟ ਸੋਨਾ (22k, 18k, 14k) ਵਿੱਚ ਤਾਂਬਾ, ਚਾਂਦੀ ਜਾਂ ਜ਼ਿੰਕ ਵਰਗੀਆਂ ਹੋਰ ਧਾਤਾਂ ਹੁੰਦੀਆਂ ਹਨ ਜੋ ਆਕਸੀਕਰਣ ਕਰ ਸਕਦੀਆਂ ਹਨ ਅਤੇ ਰੰਗ ਬਦਲ ਸਕਦੀਆਂ ਹਨ। ਕਾਲਾਪਣ ਇਸ ਲਈ ਹੁੰਦਾ ਹੈ ਕਿਉਂਕਿ:",
+        post1Alloy: "ਮਿਸ਼ਰਤ ਧਾਤ: ਮਿਸ਼ਰਤ ਧਾਤ ਵਿੱਚ ਤਾਂਬਾ ਅਤੇ ਚਾਂਦੀ ਮੈਲੀ ਹੋ ਸਕਦੀ ਹੈ",
+        post1Reactions: "ਰਸਾਇਣਕ ਪ੍ਰਤਿਕਿਰਿਆਵਾਂ: ਸੁੰਦਰਤਾ ਉਤਪਾਦਾਂ, ਪਸੀਨਾ ਜਾਂ ਰਸਾਇਣਾਂ ਦੇ ਸੰਪਰਕ ਵਿੱਚ ਆਉਣਾ",
+        post1Oxidation: "ਆਕਸੀਕਰਣ: ਸਮੇਂ ਦੇ ਨਾਲ ਮਿਸ਼ਰਤ ਧਾਤ ਵਿੱਚ ਧਾਤਾਂ ਆਕਸੀਜਨ ਨਾਲ ਪ੍ਰਤਿਕਿਰਿਆ ਕਰਦੀਆਂ ਹਨ",
+        post1PreventionTitle: "ਰੋਕਥਾਮ ਦੇ ਸੁਝਾਅ:",
+        post1Tip1: "ਗਹਿਣਿਆਂ ਨੂੰ ਹਵਾ-ਰੋਧਕ ਕੰਟੇਨਰਾਂ ਜਾਂ ਐਂਟੀ-ਟਾਰਨਿਸ਼ ਬੈਗਾਂ ਵਿੱਚ ਸਟੋਰ ਕਰੋ",
+        post1Tip2: "ਨਿਯਮਿਤ ਤੌਰ 'ਤੇ ਨਰਮ ਕੱਪੜੇ ਨਾਲ ਸਾਫ਼ ਕਰੋ",
+        post1Tip3: "ਤੈਰਾਕੀ, ਸ਼ਾਵਰ ਲੈਣ ਜਾਂ ਸੁੰਦਰਤਾ ਉਤਪਾਦ ਲਗਾਉਣ ਤੋਂ ਪਹਿਲਾਂ ਗਹਿਣੇ ਉਤਾਰੋ",
+        post1Tip4: "ਸਮੇਂ-ਸਮੇਂ 'ਤੇ ਪੇਸ਼ੇਵਰ ਸਫਾਈ ਸੇਵਾਵਾਂ ਦੀ ਵਰਤੋਂ ਕਰੋ",
+        
+        // Blog Post 2: Why 22K Instead of 24K
+        post2Title: "ਜ਼ਿਆਦਾਤਰ ਗਹਿਣੇ 24K ਦੀ ਬਜਾਏ 22K ਵਿੱਚ ਕਿਉਂ ਬਣਾਏ ਜਾਂਦੇ ਹਨ",
+        post2Intro: "ਜਦਕਿ 24-ਕੈਰਟ ਸੋਨਾ ਸੋਨੇ ਦਾ ਸਭ ਤੋਂ ਸ਼ੁੱਧ ਰੂਪ ਹੈ (99.9% ਸ਼ੁੱਧ), ਜ਼ਿਆਦਾਤਰ ਗਹਿਣੇ 22-ਕੈਰਟ ਸੋਨੇ ਵਿੱਚ ਬਣਾਏ ਜਾਂਦੇ ਹਨ। ਇਹ ਚੋਣ ਲਾਗਤ ਕਟੌਤੀ ਬਾਰੇ ਨਹੀਂ ਹੈ—ਇਹ ਟਿਕਾਊ, ਪਹਿਨਣ ਯੋਗ ਅਤੇ ਸੁੰਦਰ ਟੁਕੜੇ ਬਣਾਉਣ ਬਾਰੇ ਹੈ।",
+        post2KaratTitle: "ਕੈਰਟ ਸ਼ੁੱਧਤਾ ਨੂੰ ਸਮਝਣਾ:",
+        post2K24: "<strong>24K ਸੋਨਾ:</strong> 99.9% ਸ਼ੁੱਧ ਸੋਨਾ - ਬਹੁਤ ਨਰਮ ਅਤੇ ਆਕਾਰ ਬਦਲਣ ਯੋਗ",
+        post2K22: "<strong>22K ਸੋਨਾ:</strong> 91.7% ਸ਼ੁੱਧ ਸੋਨਾ - 8.3% ਹੋਰ ਧਾਤਾਂ ਨਾਲ ਮਿਲਾਇਆ ਗਿਆ",
+        post2K18: "<strong>18K ਸੋਨਾ:</strong> 75% ਸ਼ੁੱਧ ਸੋਨਾ - 25% ਹੋਰ ਧਾਤਾਂ ਨਾਲ ਮਿਲਾਇਆ ਗਿਆ",
+        post2K14: "<strong>14K ਸੋਨਾ:</strong> 58.3% ਸ਼ੁੱਧ ਸੋਨਾ - 41.7% ਹੋਰ ਧਾਤਾਂ ਨਾਲ ਮਿਲਾਇਆ ਗਿਆ",
+        post2WhyTitle: "ਗਹਿਣਿਆਂ ਲਈ 22K ਕਿਉਂ ਪਸੰਦ ਕੀਤਾ ਜਾਂਦਾ ਹੈ:",
+        post2Durability: "<strong>ਟਿਕਾਊਪਣ:</strong> 24K ਸੋਨਾ ਬਹੁਤ ਨਰਮ ਹੈ (ਮੋਹਸ ਪੈਮਾਨੇ 'ਤੇ 2.5) ਅਤੇ ਆਸਾਨੀ ਨਾਲ ਮੁੜ ਸਕਦਾ ਹੈ, ਖੁਰਚ ਸਕਦਾ ਹੈ ਜਾਂ ਆਪਣਾ ਆਕਾਰ ਗੁਆ ਸਕਦਾ ਹੈ। 22K ਸੋਨਾ ਉੱਚ ਸ਼ੁੱਧਤਾ ਬਣਾਈ ਰੱਖਦੇ ਹੋਏ ਵਧੇਰੇ ਟਿਕਾਊ ਹੈ।",
+        post2Wearability: "<strong>ਪਹਿਨਣ ਯੋਗਤਾ:</strong> 22K ਗਹਿਣੇ ਰੋਜ਼ਾਨਾ ਪਹਿਨਣ ਨੂੰ ਆਪਣਾ ਰੂਪ ਗੁਆਏ ਬਿਨਾਂ ਜਾਂ ਆਸਾਨੀ ਨਾਲ ਨੁਕਸਾਨ ਹੋਏ ਬਿਨਾਂ ਸਹਿ ਸਕਦੇ ਹਨ।",
+        post2Design: "<strong>ਡਿਜ਼ਾਈਨ ਲਚਕ:</strong> ਵਾਧੂ ਤਾਕਤ ਜਟਿਲ ਡਿਜ਼ਾਈਨ, ਵਿਸਤ੍ਰਿਤ ਨੱਕਾਸ਼ੀ ਅਤੇ ਸੁਰੱਖਿਤ ਪੱਥਰ ਸੈਟਿੰਗਾਂ ਦੀ ਇਜਾਜ਼ਤ ਦਿੰਦੀ ਹੈ ਜੋ ਸ਼ੁੱਧ ਸੋਨੇ ਨਾਲ ਸੰਭਵ ਨਹੀਂ ਹੋਵੇਗੀ।",
+        post2Value: "<strong>ਮੁੱਲ ਸੰਤੁਲਨ:</strong> 22K ਸੋਨੇ ਦੀ ਸ਼ੁੱਧਤਾ ਅਤੇ ਵਿਹਾਰਕ ਟਿਕਾਊਪਣ ਦੇ ਵਿਚਕਾਰ ਇੱਕ ਸ਼ਾਨਦਾਰ ਸੰਤੁਲਨ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ, ਜਿਸ ਨਾਲ ਇਹ ਵਿਰਾਸਤੀ ਟੁਕੜਿਆਂ ਲਈ ਆਦਰਸ਼ ਬਣਦਾ ਹੈ।",
+        post2Cultural: "<strong>ਸੱਭਿਆਚਾਰਕ ਤਰਜੀਹ:</strong> ਬਹੁਤ ਸਾਰੀਆਂ ਸੱਭਿਆਚਾਰਾਂ ਵਿੱਚ, ਖਾਸ ਕਰਕੇ ਭਾਰਤ ਵਿੱਚ, 22K ਸੋਨਾ ਗਹਿਣਿਆਂ ਲਈ ਪਰੰਪਰਾਗਤ ਮਾਪਦੰਡ ਹੈ, ਜੋ ਸ਼ੁੱਧਤਾ ਅਤੇ ਵਿਹਾਰਕਤਾ ਦੋਵਾਂ ਦਾ ਪ੍ਰਤੀਨਿਧਤਵ ਕਰਦਾ ਹੈ।",
+        post2WhenTitle: "ਜਦੋਂ 24K ਵਰਤਿਆ ਜਾਂਦਾ ਹੈ:",
+        post2WhenText: "24K ਸੋਨਾ ਆਮ ਤੌਰ 'ਤੇ ਨਿਵੇਸ਼ ਉਦੇਸ਼ਾਂ (ਬਾਰ, ਸਿੱਕੇ) ਜਾਂ ਸਧਾਰਨ, ਘੱਟੋ-ਘੱਟ ਗਹਿਣੇ ਟੁਕੜਿਆਂ ਲਈ ਰਾਖਵਾਂ ਹੈ ਜਿਨ੍ਹਾਂ ਨੂੰ ਬਣਤਰੀ ਤਾਕਤ ਦੀ ਲੋੜ ਨਹੀਂ ਹੈ। ਜ਼ਿਆਦਾਤਰ ਗਹਿਣਿਆਂ ਲਈ, ਖਾਸ ਕਰਕੇ ਪੱਥਰਾਂ ਜਾਂ ਜਟਿਲ ਡਿਜ਼ਾਈਨਾਂ ਵਾਲੇ ਟੁਕੜਿਆਂ ਲਈ, 22K ਵਿਹਾਰਕ ਚੋਣ ਹੈ।",
+        
+        // Blog Post 3: Why Diamond Jewellery 14K/18K
+        post3Title: "ਹੀਰੇ ਦੇ ਗਹਿਣੇ 14K ਜਾਂ 18K ਸੋਨੇ ਵਿੱਚ ਕਿਉਂ ਬਣਾਏ ਜਾਂਦੇ ਹਨ",
+        post3Intro: "ਹੀਰੇ ਦੇ ਗਹਿਣੇ ਲਗਭਗ ਵਿਸ਼ੇਸ਼ ਤੌਰ 'ਤੇ ਉੱਚ ਕੈਰਟ ਸੋਨੇ ਦੀ ਬਜਾਏ 14K ਜਾਂ 18K ਸੋਨੇ ਵਿੱਚ ਬਣਾਏ ਜਾਂਦੇ ਹਨ। ਇਹ ਚੋਣ ਤੁਹਾਡੇ ਹੀਰਿਆਂ ਦੀ ਸੁਰੱਖਿਆ ਅਤੇ ਤੁਹਾਡੇ ਗਹਿਣਿਆਂ ਦੀ ਲੰਬੀ ਉਮਰ ਦੋਵਾਂ ਲਈ ਮਹੱਤਵਪੂਰਨ ਹੈ।",
+        post3ScienceTitle: "ਇਸ ਦੇ ਪਿੱਛੇ ਦਾ ਵਿਗਿਆਨ:",
+        post3ScienceText: "ਹੀਰੇ ਸਭ ਤੋਂ ਸਖ਼ਤ ਕੁਦਰਤੀ ਸਮੱਗਰੀ ਹਨ (ਮੋਹਸ ਪੈਮਾਨੇ 'ਤੇ 10), ਪਰ ਉਨ੍ਹਾਂ ਨੂੰ ਇੱਕ ਮਜ਼ਬੂਤ, ਸੁਰੱਖਿਤ ਸੈਟਿੰਗ ਦੀ ਲੋੜ ਹੈ। ਉੱਚ ਕੈਰਟ ਸੋਨਾ (22K ਜਾਂ 24K) ਹੀਰਿਆਂ ਨੂੰ ਸੁਰੱਖਿਤ ਰੂਪ ਵਿੱਚ ਰੱਖਣ ਲਈ ਬਹੁਤ ਨਰਮ ਹੈ।",
+        post3WhyTitle: "14K ਅਤੇ 18K ਸੋਨਾ ਕਿਉਂ:",
+        post3Secure: "<strong>ਸੁਰੱਖਿਤ ਪੱਥਰ ਸੈਟਿੰਗ:</strong> ਘੱਟ ਕੈਰਟ ਸੋਨਾ ਸਖ਼ਤ ਅਤੇ ਮਜ਼ਬੂਤ ਹੁੰਦਾ ਹੈ, ਜੋ ਹੀਰਿਆਂ ਨੂੰ ਜਗ੍ਹਾ 'ਤੇ ਰੱਖਣ ਵਾਲੇ ਪ੍ਰੋਂਗਾਂ ਅਤੇ ਬੇਜ਼ਲਾਂ ਲਈ ਬਿਹਤਰ ਪਕੜ ਪ੍ਰਦਾਨ ਕਰਦਾ ਹੈ। ਇਹ ਪੱਥਰਾਂ ਨੂੰ ਢਿੱਲੇ ਹੋਣ ਜਾਂ ਡਿੱਗਣ ਤੋਂ ਰੋਕਦਾ ਹੈ।",
+        post3Durability: "<strong>ਟਿਕਾਊਪਣ:</strong> 14K ਅਤੇ 18K ਸੋਨਾ 22K ਜਾਂ 24K ਦੀ ਤੁਲਨਾ ਵਿੱਚ ਕਾਫ਼ੀ ਵਧੇਰੇ ਟਿਕਾਊ ਹੈ, ਜਿਸ ਨਾਲ ਇਹ ਰਿੰਗਾਂ, ਕੜਿਆਂ ਅਤੇ ਹੋਰ ਟੁਕੜਿਆਂ ਲਈ ਆਦਰਸ਼ ਹੈ ਜੋ ਰੋਜ਼ਾਨਾ ਪਹਿਨਣ ਅਤੇ ਪ੍ਰਭਾਵ ਦਾ ਅਨੁਭਵ ਕਰਦੇ ਹਨ।",
+        post3Versatility: "<strong>ਡਿਜ਼ਾਈਨ ਬਹੁਪੱਖਤਾ:</strong> ਵਾਧੂ ਤਾਕਤ ਨਾਜ਼ੁਕ ਪ੍ਰੋਂਗ ਸੈਟਿੰਗਾਂ, ਪੇਵ ਕੰਮ ਅਤੇ ਜਟਿਲ ਡਿਜ਼ਾਈਨਾਂ ਦੀ ਇਜਾਜ਼ਤ ਦਿੰਦੀ ਹੈ ਜੋ ਹੀਰਿਆਂ ਨੂੰ ਸੁੰਦਰ ਢੰਗ ਨਾਲ ਪ੍ਰਦਰਸ਼ਿਤ ਕਰਦੇ ਹਨ ਜਦੋਂ ਕਿ ਉਨ੍ਹਾਂ ਨੂੰ ਸੁਰੱਖਿਤ ਰੱਖਦੇ ਹਨ।",
+        post3Scratch: "<strong>ਖੁਰਚ ਪ੍ਰਤੀਰੋਧ:</strong> ਮਿਸ਼ਰਤ ਧਾਤ (ਤਾਂਬਾ, ਚਾਂਦੀ, ਜ਼ਿੰਕ) ਸੋਨੇ ਨੂੰ ਸਖ਼ਤ ਬਣਾਉਂਦੀ ਹੈ, ਖੁਰਚਾਂ ਨੂੰ ਘਟਾਉਂਦੀ ਹੈ ਅਤੇ ਸਮੇਂ ਦੇ ਨਾਲ ਟੁਕੜੇ ਦੀ ਦਿੱਖ ਬਣਾਈ ਰੱਖਦੀ ਹੈ।",
+        post3ColorTitle: "Color Options: Different alloys create various gold colors:",
+        post3Yellow: "<strong>ਪੀਲਾ ਸੋਨਾ:</strong> ਤਾਂਬਾ ਅਤੇ ਚਾਂਦੀ ਨਾਲ ਮਿਲਾਇਆ ਗਿਆ",
+        post3White: "<strong>ਚਿੱਟਾ ਸੋਨਾ:</strong> ਨਿਕਲ ਜਾਂ ਪੈਲੇਡੀਅਮ ਨਾਲ ਮਿਲਾਇਆ ਗਿਆ, ਅਕਸਰ ਰੋਡੀਅਮ ਨਾਲ ਲੇਪਿਤ",
+        post3Rose: "<strong>ਗੁਲਾਬੀ ਸੋਨਾ:</strong> ਗੁਲਾਬੀ ਰੰਗ ਲਈ ਵਧੇਰੇ ਤਾਂਬੇ ਨਾਲ ਮਿਲਾਇਆ ਗਿਆ",
+        post3CompareTitle: "14K vs 18K for Diamonds:",
+        post3K14: "<strong>14K ਸੋਨਾ (58.3% ਸ਼ੁੱਧ):</strong> ਅਧਿਕਤਮ ਟਿਕਾਊਪਣ, ਸਭ ਤੋਂ ਸਸਤਾ, ਰੋਜ਼ਾਨਾ ਪਹਿਨਣ ਅਤੇ ਸਰਗਰਮ ਜੀਵਨ ਸ਼ੈਲੀਆਂ ਲਈ ਆਦਰਸ਼। ਰੰਗ ਵਿੱਚ ਥੋੜ੍ਹਾ ਘੱਟ ਪੀਲਾ।",
+        post3K18: "<strong>18K ਸੋਨਾ (75% ਸ਼ੁੱਧ):</strong> ਸ਼ੁੱਧਤਾ ਅਤੇ ਤਾਕਤ ਦਾ ਬਿਹਤਰ ਸੰਤੁਲਨ, ਅਮੀਰ ਸੋਨੇ ਦਾ ਰੰਗ, ਬਿਹਤਰੀਨ ਗਹਿਣਿਆਂ ਲਈ ਤਰਜੀਹ। 14K ਦੀ ਤੁਲਨਾ ਵਿੱਚ ਥੋੜ੍ਹਾ ਨਰਮ ਪਰ ਫਿਰ ਵੀ ਬਹੁਤ ਟਿਕਾਊ।",
+        post3WhyNotTitle: "ਉੱਚ ਕੈਰਟ ਕਿਉਂ ਨਹੀਂ?",
+        post3WhyNotText: "22K ਜਾਂ 24K ਸੋਨਾ ਹੀਰਿਆਂ ਨੂੰ ਸੁਰੱਖਿਤ ਰੂਪ ਵਿੱਚ ਰੱਖਣ ਲਈ ਬਹੁਤ ਨਰਮ ਹੋਵੇਗਾ। ਪ੍ਰੋਂਗ ਮੁੜ ਜਾਣਗੇ, ਸੈਟਿੰਗਾਂ ਢਿੱਲੀਆਂ ਹੋ ਜਾਣਗੀਆਂ, ਅਤੇ ਤੁਸੀਂ ਆਪਣੇ ਕੀਮਤੀ ਪੱਥਰਾਂ ਨੂੰ ਗੁਆਉਣ ਦਾ ਜੋਖਮ ਚੁੱਕੋਗੇ। ਸੁਰੱਖਿਆ ਅਤੇ ਟਿਕਾਊਪਣ ਲਈ ਸੋਨੇ ਦੀ ਸ਼ੁੱਧਤਾ ਵਿੱਚ ਮਾਮੂਲੀ ਕਮੀ ਇੱਕ ਜ਼ਰੂਰੀ ਸਮਝੌਤਾ ਹੈ।",
+        
+        // Common
+        backToAllPosts: "← ਸਾਰੀਆਂ ਪੋਸਟਾਂ 'ਤੇ ਵਾਪਸ ਜਾਓ",
+        date: "ਜਨਵਰੀ 2024"
+    }
+};
+
+// Language switcher functionality
+let currentLanguage = localStorage.getItem('blogLanguage') || 'en';
+
+function setLanguage(lang) {
+    currentLanguage = lang;
+    localStorage.setItem('blogLanguage', lang);
+    updatePageContent();
+    updateLanguageSelector();
+}
+
+function updateLanguageSelector() {
+    const selector = document.getElementById('languageSelector');
+    if (selector) {
+        selector.value = currentLanguage;
+    }
+}
+
+function updatePageContent() {
+    const t = translations[currentLanguage];
+    if (!t) return;
+    
+    // Update all elements with data-translate attribute
+    document.querySelectorAll('[data-translate]').forEach(element => {
+        const key = element.getAttribute('data-translate');
+        if (t[key]) {
+            element.textContent = t[key];
+        }
+    });
+    
+    // Update elements with data-translate-html attribute (for HTML content)
+    document.querySelectorAll('[data-translate-html]').forEach(element => {
+        const key = element.getAttribute('data-translate-html');
+        if (t[key]) {
+            element.innerHTML = t[key];
+        }
+    });
+    
+    // Update page title if it exists
+    const pageTitle = document.querySelector('[data-translate-title]');
+    if (pageTitle && t[pageTitle.getAttribute('data-translate-title')]) {
+        document.title = t[pageTitle.getAttribute('data-translate-title')] + ' - Lakhe Wale Jewellers';
+    }
+}
+
+// Initialize on page load
+document.addEventListener('DOMContentLoaded', () => {
+    updateLanguageSelector();
+    updatePageContent();
+    
+    // Add language selector change handler
+    const selector = document.getElementById('languageSelector');
+    if (selector) {
+        selector.addEventListener('change', (e) => {
+            setLanguage(e.target.value);
+        });
+    }
+});
+

@@ -30,6 +30,15 @@
                     <li><a href="../index.html#collections" class="nav-link">Collections</a></li>
                     <li><a href="blog.html" class="nav-link">Blog</a></li>
                     <li><a href="../index.html#contact" class="nav-link">Contact</a></li>
+                    <li>
+                        <div class="language-switcher">
+                            <select id="languageSelector">
+                                <option value="en">English</option>
+                                <option value="hi">हिंदी</option>
+                                <option value="pa">ਪੰਜਾਬੀ</option>
+                            </select>
+                        </div>
+                    </li>
                 </ul>
                 <div class="hamburger" id="hamburger">
                     <span></span>
@@ -44,26 +53,26 @@
     <section class="blog" style="padding-top: 120px;">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title">Jewellery Insights</h2>
+                <h2 class="section-title" data-translate="blogTitle">Jewellery Insights</h2>
                 <div class="title-underline"></div>
-                <p class="section-subtitle">Expert knowledge about jewellery care and craftsmanship</p>
+                <p class="section-subtitle" data-translate="blogSubtitle">Expert knowledge about jewellery care and craftsmanship</p>
             </div>
             <div class="blog-grid">
                 <!-- Blog Post 1 -->
                 <article class="blog-card">
                     <a href="blog-why-jewellery-gets-black.html" style="text-decoration: none; color: inherit;">
                         <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1603561596112-0a13211e0262?w=600&h=400&fit=crop&q=80" alt="Tarnished Gold and Silver Jewellery" class="blog-img">
                             <div class="blog-overlay"></div>
-                            <span class="blog-icon">⚫</span>
                         </div>
                         <div class="blog-content">
-                            <h3>Why Gold and Silver Jewellery Gets Black</h3>
+                            <h3 data-translate="post1Title">Why Gold and Silver Jewellery Gets Black</h3>
                             <div class="blog-meta">
-                                <span class="blog-date">📅 January 2024</span>
+                                <span class="blog-date" data-translate="date">January 2024</span>
                             </div>
-                            <p>Have you ever noticed your precious gold or silver jewellery turning black or tarnished? This is a common concern among jewellery owners, and understanding why it happens can help you maintain your pieces better.</p>
+                            <p data-translate="post1Intro">Have you ever noticed your precious gold or silver jewellery turning black or tarnished? This is a common concern among jewellery owners, and understanding why it happens can help you maintain your pieces better.</p>
                             <div style="margin-top: 1rem;">
-                                <span style="color: var(--primary-gold); font-weight: 600;">Read More →</span>
+                                <span style="color: var(--primary-gold); font-weight: 600;" data-translate="readMore">Read More →</span>
                             </div>
                         </div>
                     </a>
@@ -73,17 +82,17 @@
                 <article class="blog-card">
                     <a href="blog-why-22k-instead-of-24k.html" style="text-decoration: none; color: inherit;">
                         <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&h=400&fit=crop&q=80" alt="22K Gold Jewellery" class="blog-img">
                             <div class="blog-overlay"></div>
-                            <span class="blog-icon">👑</span>
                         </div>
                         <div class="blog-content">
-                            <h3>Why Most Jewellery is 22K Instead of 24K</h3>
+                            <h3 data-translate="post2Title">Why Most Jewellery is 22K Instead of 24K</h3>
                             <div class="blog-meta">
-                                <span class="blog-date">📅 January 2024</span>
+                                <span class="blog-date" data-translate="date">January 2024</span>
                             </div>
-                            <p>While 24-karat gold is the purest form of gold (99.9% pure), most jewellery is crafted in 22-karat gold. This choice isn't about cost-cutting—it's about creating durable, wearable, and beautiful pieces.</p>
+                            <p data-translate="post2Intro">While 24-karat gold is the purest form of gold (99.9% pure), most jewellery is crafted in 22-karat gold. This choice isn't about cost-cutting—it's about creating durable, wearable, and beautiful pieces.</p>
                             <div style="margin-top: 1rem;">
-                                <span style="color: var(--primary-gold); font-weight: 600;">Read More →</span>
+                                <span style="color: var(--primary-gold); font-weight: 600;" data-translate="readMore">Read More →</span>
                             </div>
                         </div>
                     </a>
@@ -93,17 +102,17 @@
                 <article class="blog-card">
                     <a href="blog-why-diamond-jewellery-14k-18k.html" style="text-decoration: none; color: inherit;">
                         <div class="blog-image">
+                            <img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&h=400&fit=crop&q=80" alt="Diamond Jewellery in Gold Settings" class="blog-img">
                             <div class="blog-overlay"></div>
-                            <span class="blog-icon">💍</span>
                         </div>
                         <div class="blog-content">
-                            <h3>Why Diamond Jewellery is Made in 14K or 18K Gold</h3>
+                            <h3 data-translate="post3Title">Why Diamond Jewellery is Made in 14K or 18K Gold</h3>
                             <div class="blog-meta">
-                                <span class="blog-date">📅 January 2024</span>
+                                <span class="blog-date" data-translate="date">January 2024</span>
                             </div>
-                            <p>Diamond jewellery is almost exclusively crafted in 14K or 18K gold rather than higher karat gold. This choice is crucial for both the security of your diamonds and the longevity of your jewellery.</p>
+                            <p data-translate="post3Intro">Diamond jewellery is almost exclusively crafted in 14K or 18K gold rather than higher karat gold. This choice is crucial for both the security of your diamonds and the longevity of your jewellery.</p>
                             <div style="margin-top: 1rem;">
-                                <span style="color: var(--primary-gold); font-weight: 600;">Read More →</span>
+                                <span style="color: var(--primary-gold); font-weight: 600;" data-translate="readMore">Read More →</span>
                             </div>
                         </div>
                     </a>
@@ -141,6 +150,7 @@
         </div>
     </footer>
 
+    <script src="translations.js"></script>
     <script src="../script.js"></script>
 </body>
 </html>
