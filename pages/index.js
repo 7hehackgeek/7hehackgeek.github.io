@@ -3,7 +3,6 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
-import { useScrollAnimation } from '../hooks/useScrollAnimation'
 
 export default function Home() {
   useEffect(() => {
@@ -54,9 +53,9 @@ export default function Home() {
               <span className="title-line">Lakhe Wale</span>
               <span className="title-line">Jewellers</span>
             </h1>
-            <p className="hero-subtitle">Crafting Timeless Elegance Since Generations</p>
-            <p className="hero-description">Discover our exquisite collection of premium gold, diamond, and traditional jewellery</p>
-            <a href="#collections" className="cta-button">Explore Collections</a>
+            <p className="hero-subtitle">4 Generations • 90+ Years • Serving Clients Worldwide</p>
+            <p className="hero-description">Discover our exquisite collection of premium gold, diamond, silver, and traditional jewellery</p>
+            <a href="#collections" className="cta-button">What We Deal In</a>
           </div>
         </div>
         <div className="scroll-indicator">
@@ -74,34 +73,33 @@ export default function Home() {
           <div className="about-content">
             <div className="about-text">
               <h3>Your Trusted Jewellery Partner</h3>
-              <p>Lakhe Wale Jewellers has been serving the community of Jagraon with exceptional craftsmanship and authentic designs for generations. Located at the heart of Jhansi Rani Chowk, we take pride in offering the finest collection of gold, diamond, and traditional jewellery.</p>
-              <p>Our commitment to quality, transparency, and customer satisfaction has made us a trusted name in the jewellery industry. Every piece we create is a testament to our dedication to excellence and timeless beauty.</p>
+              <p>Lakhe Wale Jewellers is a family business spanning 4 generations, with over 90+ years of exceptional craftsmanship and authentic designs. Located at the heart of Jhansi Rani Chowk, Jagraon, we take pride in offering the finest collection of gold, diamond, and traditional jewellery.</p>
+              <p>Our commitment to quality, transparency, and customer satisfaction has made us a trusted name in the jewellery industry. We are proud to serve clients from all across the globe, including Canada, UK, Australia, New Zealand, Dubai, USA, Saudi Arabia, and many more countries.</p>
+              <p>Every piece we create is a testament to our dedication to excellence and timeless beauty, carrying forward a legacy of four generations of expertise.</p>
               <div className="features">
                 <div className="feature-item">
                   <div className="feature-icon"></div>
-                  <h4>Authentic Designs</h4>
-                  <p>Traditional and modern designs</p>
+                  <h4>4 Generations</h4>
+                  <p>Family business since 90+ years</p>
+                </div>
+                <div className="feature-item">
+                  <div className="feature-icon"></div>
+                  <h4>Global Reach</h4>
+                  <p>Serving clients worldwide</p>
                 </div>
                 <div className="feature-item">
                   <div className="feature-icon"></div>
                   <h4>Premium Quality</h4>
                   <p>Certified gold and diamonds</p>
                 </div>
-                <div className="feature-item">
-                  <div className="feature-icon"></div>
-                  <h4>Trusted Legacy</h4>
-                  <p>Generations of expertise</p>
-                </div>
               </div>
             </div>
             <div className="about-image">
               <div className="image-placeholder">
-                <Image
-                  src="https://images.unsplash.com/photo-1611591437281-8bf2e22b4b6e?w=800&h=600&fit=crop&q=80"
+                <img
+                  src="/Assets/images/goldjewellery.jpg"
                   alt="Traditional Indian Gold Jewellery"
                   className="about-img"
-                  width={800}
-                  height={600}
                 />
               </div>
             </div>
@@ -113,19 +111,17 @@ export default function Home() {
       <section id="collections" className="collections">
         <div className="container">
           <div className="section-header">
-            <h2 className="section-title">Our Collections</h2>
+            <h2 className="section-title">What We Deal In</h2>
             <div className="title-underline"></div>
-            <p className="section-subtitle">Explore our exquisite range of jewellery</p>
+            <p className="section-subtitle">Premium jewellery and metals tailored to your needs</p>
           </div>
           <div className="collections-grid">
             <div className="collection-card">
               <div className="card-image">
-                <Image
-                  src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&h=400&fit=crop&q=80"
-                  alt="Gold Jewellery Collection"
+                <img
+                  src="/Assets/images/goldjewellery.jpg"
+                  alt="Gold Jewellery"
                   className="collection-img"
-                  width={600}
-                  height={400}
                 />
                 <div className="card-overlay"></div>
               </div>
@@ -136,50 +132,58 @@ export default function Home() {
             </div>
             <div className="collection-card">
               <div className="card-image">
-                <Image
-                  src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&h=400&fit=crop&q=80"
-                  alt="Diamond Jewellery Collection"
+                <img
+                  src="/Assets/images/diamond jewellery.jpg"
+                  alt="Diamond Jewellery"
                   className="collection-img"
-                  width={600}
-                  height={400}
                 />
                 <div className="card-overlay"></div>
               </div>
               <div className="card-content">
-                <h3>Diamond Collection</h3>
+                <h3>Diamond Jewellery</h3>
                 <p>Stunning diamond pieces for special occasions</p>
               </div>
             </div>
             <div className="collection-card">
               <div className="card-image">
-                <Image
-                  src="https://images.unsplash.com/photo-1611591437281-8bf2e22b4b6e?w=600&h=400&fit=crop&q=80"
-                  alt="Traditional Indian Jewellery Sets"
+                <img
+                  src="/Assets/images/Silver Jewelry Collection.webp"
+                  alt="Silver Jewellery"
                   className="collection-img"
-                  width={600}
-                  height={400}
                 />
                 <div className="card-overlay"></div>
               </div>
               <div className="card-content">
-                <h3>Traditional Sets</h3>
-                <p>Authentic traditional jewellery sets</p>
+                <h3>Silver Jewellery</h3>
+                <p>Elegant silver pieces with timeless appeal</p>
               </div>
             </div>
             <div className="collection-card">
               <div className="card-image">
-                <Image
-                  src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?w=600&h=400&fit=crop&q=80"
-                  alt="Custom Jewellery Designs"
+                <img
+                  src="/Assets/images/custom jewellery.jpg"
+                  alt="Custom Jewellery"
                   className="collection-img"
-                  width={600}
-                  height={400}
                 />
                 <div className="card-overlay"></div>
               </div>
               <div className="card-content">
-                <h3>Custom Designs</h3>
-                <p>Bespoke jewellery crafted to your preferences</p>
+                <h3>Custom Jewellery</h3>
+                <p>Bespoke jewellery crafted to your preferences and design</p>
+              </div>
+            </div>
+            <div className="collection-card">
+              <div className="card-image">
+                <img
+                  src="/Assets/images/Gold Silver Prices.jpg"
+                  alt="Raw Metal Coins"
+                  className="collection-img"
+                />
+                <div className="card-overlay"></div>
+              </div>
+              <div className="card-content">
+                <h3>Raw Metal Coins</h3>
+                <p>Gold and silver coins cut to your budget requirements</p>
               </div>
             </div>
           </div>

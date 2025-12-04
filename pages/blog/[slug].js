@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/router'
 import BlogNavbar from '../../components/BlogNavbar'
@@ -144,11 +143,9 @@ export default function BlogPost() {
               {t.backToBlog}
             </Link>
             <div className="blog-post-image">
-              <Image
+              <img
                 src={post.image}
                 alt={post.alt}
-                width={400}
-                height={400}
                 style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '50%' }}
               />
             </div>

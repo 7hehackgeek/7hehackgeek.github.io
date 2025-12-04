@@ -19,7 +19,7 @@ export default function Footer() {
         <div className="footer-content">
           <div className="footer-section">
             <h3>Lakhe Wale Jewellers</h3>
-            <p>Crafting timeless elegance with authentic designs and premium quality.</p>
+            <p>4 generations of excellence. 90+ years of trusted craftsmanship. Serving clients globally with authentic designs and premium quality.</p>
           </div>
           <div className="footer-section">
             <h4>Quick Links</h4>

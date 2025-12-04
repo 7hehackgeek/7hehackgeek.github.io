@@ -1,6 +1,5 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import BlogNavbar from '../../components/BlogNavbar'
 import Footer from '../../components/Footer'
@@ -26,21 +25,21 @@ export default function Blog() {
       slug: 'why-jewellery-gets-black',
       titleKey: 'post1Title',
       introKey: 'post1Intro',
-      image: 'https://images.unsplash.com/photo-1603561596112-0a13211e0262?w=600&h=400&fit=crop&q=80',
+      image: '/Assets/images/Silver Jewelry Collection.webp',
       alt: 'Tarnished Gold and Silver Jewellery'
     },
     {
       slug: 'why-22k-instead-of-24k',
       titleKey: 'post2Title',
       introKey: 'post2Intro',
-      image: 'https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=600&h=400&fit=crop&q=80',
+      image: '/Assets/images/goldjewellery.jpg',
       alt: '22K Gold Jewellery'
     },
     {
       slug: 'why-diamond-jewellery-14k-18k',
       titleKey: 'post3Title',
       introKey: 'post3Intro',
-      image: 'https://images.unsplash.com/photo-1603561591411-07134e71a2a9?w=600&h=400&fit=crop&q=80',
+      image: '/Assets/images/diamond jewellery.jpg',
       alt: 'Diamond Jewellery in Gold Settings'
     }
   ]
@@ -65,12 +64,10 @@ export default function Blog() {
               <article key={post.slug} className="blog-card">
                 <Link href={`/blog/${post.slug}`} style={{ textDecoration: 'none', color: 'inherit' }}>
                   <div className="blog-image">
-                    <Image
+                    <img
                       src={post.image}
                       alt={post.alt}
                       className="blog-img"
-                      width={600}
-                      height={400}
                     />
                     <div className="blog-overlay"></div>
                   </div>
