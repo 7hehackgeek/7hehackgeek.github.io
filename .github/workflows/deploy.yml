@@ -1,9 +1,12 @@
-name: Deploy to GitHub Pages
+# Deploy Next.js site to GitHub Pages
+# Using peaceiris/actions-gh-pages to avoid deprecation issues
+
+name: Deploy Next.js to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: ["main"]
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -14,26 +17,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      
+
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: "20"
           cache: 'npm'
-      
+
       - name: Install dependencies
         run: npm ci
-      
-      - name: Build
+
+      - name: Build with Next.js
         run: npm run build
-      
+
       - name: Copy CNAME and .nojekyll
         run: |
           if [ -f CNAME ]; then
             cp CNAME out/
           fi
-          echo "" > out/.nojekyll
-      
+          touch out/.nojekyll
+
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         if: github.ref == 'refs/heads/main'
@@ -41,4 +44,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./out
           cname: lakhewale.com
-
