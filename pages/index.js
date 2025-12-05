@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { useEffect } from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import GoogleReviewsTicker from '../components/GoogleReviewsTicker'
 
 export default function Home() {
   useEffect(() => {
@@ -241,6 +242,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Google Reviews Ticker */}
+      <GoogleReviewsTicker />
 
       <Footer />
     </>

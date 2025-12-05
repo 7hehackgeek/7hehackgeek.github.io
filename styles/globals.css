@@ -1277,3 +1277,150 @@ section {
     }
 }
 
+/* Google Reviews Ticker */
+.reviews-ticker {
+    background: linear-gradient(135deg, var(--dark-bg) 0%, #2a0f15 100%);
+    padding: 2rem 0;
+    overflow: hidden;
+    border-top: 2px solid var(--primary-gold);
+    border-bottom: 2px solid var(--primary-gold);
+    position: relative;
+}
+
+.reviews-ticker::before,
+.reviews-ticker::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.reviews-ticker::before {
+    left: 0;
+    background: linear-gradient(to right, var(--dark-bg), transparent);
+}
+
+.reviews-ticker::after {
+    right: 0;
+    background: linear-gradient(to left, var(--dark-bg), transparent);
+}
+
+.ticker-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.ticker-label {
+    text-align: center;
+    color: var(--primary-gold);
+    font-size: 1.2rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ticker-label span {
+    font-size: 1.5rem;
+}
+
+.ticker-wrapper {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.ticker-content {
+    display: flex;
+    animation: scroll 30s linear infinite;
+    gap: 3rem;
+    will-change: transform;
+}
+
+.ticker-item {
+    flex-shrink: 0;
+    min-width: 350px;
+    background: rgba(231, 171, 107, 0.1);
+    border: 1px solid rgba(231, 171, 107, 0.3);
+    border-radius: 15px;
+    padding: 1.5rem;
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.ticker-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(231, 171, 107, 0.3);
+    border-color: var(--primary-gold);
+}
+
+.review-stars {
+    color: var(--primary-gold);
+    font-size: 1.2rem;
+    margin-bottom: 0.8rem;
+    letter-spacing: 2px;
+}
+
+.review-text {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0.5px;
+    min-height: 60px;
+}
+
+.review-author {
+    color: var(--primary-gold);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-align: right;
+}
+
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+/* Pause animation on hover */
+.ticker-wrapper:hover .ticker-content {
+    animation-play-state: paused;
+}
+
+@media (max-width: 768px) {
+    .ticker-item {
+        min-width: 280px;
+        padding: 1.2rem;
+    }
+
+    .ticker-label {
+        font-size: 1rem;
+        letter-spacing: 2px;
+    }
+
+    .review-text {
+        font-size: 0.85rem;
+        min-height: 50px;
+    }
+
+    .ticker-content {
+        gap: 2rem;
+    }
+}
+
